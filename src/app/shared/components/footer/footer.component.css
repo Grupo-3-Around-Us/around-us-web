@@ -1,0 +1,35 @@
+footer {
+  display: flex;
+  background-color: #344956;
+  align-items: center;
+  height: 110px;
+  width: 100vw;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5  px
+}
+
+.footer-rights-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-rights {
+  color: #08B16B;
+}
+
+.footer-rights-container > img {
+  width: 35px;
+  height: 35px;
+}
+
+.footer-social-container {
+  display: flex;
+  gap: 10px;
+}
+
+.social-logo {
+  width: 25px;
+  height: 25px;
+}
