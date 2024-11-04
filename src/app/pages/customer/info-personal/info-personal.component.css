@@ -1,0 +1,52 @@
+.micu_infoper_container {
+  display: flex;
+  flex-direction: row;
+  position: realtive;
+}
+
+app-navbar-mi-cuenta {
+  flex: 1;
+}
+
+.micu_infoper_right {
+  padding: 1.5em 1em;
+  gap: 1.3em;
+  background-color: #5AD8FB20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 3;
+  width: 100vw;
+
+  h1 {
+    font-size: 3em;
+    font-weight: 100;
+  }
+
+  hr {
+    width: 90%;
+    border: 0.2px solid #0002;
+  }
+}
+
+.navbar-micu-buttons-infoper {
+  background-color: #95BCCB;
+}
+
+.micu-infoper-actu {
+  display: flex;
+  flex-direction: row;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+
+  label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 100;
+  }
+}
