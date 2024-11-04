@@ -36,6 +36,7 @@ app-nav-bar {
 }
 
 .home-content > h1 > span {
+  font-size: inherit;
   color: #0A8754;
 }
 
