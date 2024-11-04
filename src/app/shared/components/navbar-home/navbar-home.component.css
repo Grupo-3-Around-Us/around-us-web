@@ -37,11 +37,16 @@ nav > .navbar-home-button {
 .navbar-auth-buttons {
   display: flex;
   gap: 15px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .login-button, .register-button {
   width: 140px;
-  padding: 9px 0;
   text-align: center;
   border-radius: 15px;
   background-color: #fff;
