@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavbarConfigComponent } from '../../../shared/components/navbar-config/navbar-config.component';
 
 @Component({
-  selector: 'app-user-config',
+  selector: 'app-config-security',
   standalone: true,
-  imports: [],
-  templateUrl: './user-config.component.html',
-  styleUrl: './user-config.component.css'
+  imports: [NavbarConfigComponent],
+  templateUrl: './config-security.component.html',
+  styleUrl: './config-security.component.css'
 })
-export class UserConfigComponent {
+export class ConfigSecurityComponent {
   passwordForm: FormGroup;
   showPassword = false;
 

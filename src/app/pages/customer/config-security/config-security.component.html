@@ -1,0 +1,27 @@
+<div class="d-flex">
+  <app-navbar-config/>
+  <div class="content flex-grow-1">
+    <div class="col-md-9 content">
+      <div class="container">
+        <div class="card mb-4">
+            <h4 class="mb-3">Cambiar contraseña:</h4>
+            <div class="mb-3">
+                <label for="newPassword" class="form-label">Nueva contraseña:</label>
+                <input type="password" class="form-control border-success" id="newPassword" value="">
+                <small class="text-success">✔ Contraseña segura</small>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirmar nueva contraseña:</label>
+                <input type="password" class="form-control border-danger" id="confirmPassword" value="">
+                <small class="text-danger">✘ Las contraseñas no coinciden</small>
+            </div>
+            <button type="button" class="btn btn-custom-green">Cambiar contraseña</button>
+        </div>
+        <div class="card">
+            <h4 class="mb-3">Autenticacion en dos pasos</h4>
+            <p>Activa la autenticacion en dos pasos para añadir una capa protectora a tu cuenta</p>
+            <button type="button" class="btn btn-custom">Activar autenticacion en dos pasos</button>
+        </div>
+    </div>
+  </div>
+</div>

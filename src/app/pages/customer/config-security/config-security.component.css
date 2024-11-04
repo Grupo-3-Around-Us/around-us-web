@@ -1,0 +1,34 @@
+body {
+  background-color: #e6f7ff;
+  font-family: Arial, sans-serif;
+}
+.container {
+  margin-top: 50px;
+}
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+}
+.btn-custom {
+  background-color: #5bc0de;
+  color: white;
+  border-radius: 20px;
+}
+.btn-custom-green {
+  background-color: #5cb85c;
+  color: white;
+  border-radius: 20px;
+}
+.text-success {
+  color: #5cb85c;
+}
+.text-danger {
+  color: #d9534f;
+}
+
+.navbar-micu-buttons-security {
+  background-color: #95BCCB;
+}
+
