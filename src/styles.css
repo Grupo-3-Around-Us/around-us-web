@@ -6,6 +6,12 @@
   font-family: 'DM Sans', sans-serif;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 app-root {
   display: block;
   height: 100vh;
