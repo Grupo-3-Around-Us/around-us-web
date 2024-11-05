@@ -7,6 +7,9 @@ import { EventListComponent } from './event-list/event-list.component';
 import { EventSearchComponent } from './event-search/event-search.component';
 import { InfoPersonalComponent } from './info-personal/info-personal.component';
 import { PreferenciasComponent } from './preferencias/preferencias.component';
+import { ConfigPrivacyComponent } from './config-privacy/config-privacy.component';
+import { ConfigSecurityComponent } from './config-security/config-security.component';
+
 
 export const customerRoutes: Routes = [
   {
@@ -41,6 +44,14 @@ export const customerRoutes: Routes = [
         path: 'form-registro',
         component: FormRegistroComponent,
       }
+      {
+        path: 'config/privacy',
+        component: ConfigPrivacyComponent,
+      },
+      {
+        path: 'config/security',
+        component: ConfigSecurityComponent,
+      },
     ]
   }
 ];

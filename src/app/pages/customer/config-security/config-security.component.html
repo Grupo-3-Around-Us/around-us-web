@@ -1,0 +1,112 @@
+<!-- config-security.component.html -->
+<div class="d-flex">
+  <app-navbar-config/>
+  <div class="content flex-grow-1 d-flex justify-content-center align-items-center">
+    <div class="col-md-9">
+      <div class="container">
+        <div class="card mb-4">
+          <h4 class="mb-3">Cambiar contraseña:</h4>
+          <form [formGroup]="passwordForm">
+            <!-- Campo de nueva contraseña -->
+            <div class="mb-3">
+              <label for="newPassword" class="form-label">Nueva contraseña:</label>
+              <div class="input-group">
+                <input
+                  [type]="showPassword ? 'text' : 'password'"
+                  class="form-control"
+                  [ngClass]="{'border-success': isPasswordSecure() && passwordTouched}"
+                  id="newPassword"
+                  formControlName="newPassword"
+                >
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  (click)="togglePasswordVisibility()">
+                  <i class="fas" [class.fa-eye]="!showPassword" [class.fa-eye-slash]="showPassword"></i>
+                </button>
+              </div>
+              <!-- Mensajes de validación de contraseña -->
+              <div *ngIf="passwordTouched">
+                <div *ngIf="!isPasswordSecure()" class="text-danger small">
+                  La contraseña debe tener:
+                  <ul>
+                    <li>Al menos 8 caracteres</li>
+                    <li>Al menos una letra mayúscula</li>
+                    <li>Al menos un número</li>
+                    <li>Al menos un carácter especial</li>
+                  </ul>
+                </div>
+                <div *ngIf="isPasswordSecure()" class="text-success small">
+                  ✔ Contraseña segura
+                </div>
+              </div>
+            </div>
+
+            <!-- Campo de confirmación de contraseña -->
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirmar nueva contraseña:</label>
+              <div class="input-group">
+                <input
+                  [type]="showPassword ? 'text' : 'password'"
+                  class="form-control"
+                  [ngClass]="{'border-success': passwordMismatch() && passwordForm.get('confirmPassword')?.value}"
+                  id="confirmPassword"
+                  formControlName="confirmPassword"
+                >
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  (click)="togglePasswordVisibility()">
+                  <i class="fas" [class.fa-eye]="!showPassword" [class.fa-eye-slash]="showPassword"></i>
+                </button>
+              </div>
+              <!-- Mensaje de coincidencia de contraseñas -->
+              <div *ngIf="passwordForm.get('confirmPassword')?.value">
+                <small class="text-danger" *ngIf="!passwordMismatch()">
+                  Las contraseñas no coinciden
+                </small>
+                <small class="text-success" *ngIf="passwordMismatch()">
+                  ✔ Las contraseñas coinciden
+                </small>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-custom-green"
+              (click)="onChangePassword()"
+              [disabled]="!isPasswordSecure() || !passwordMismatch()">
+              Cambiar contraseña
+            </button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h4 class="mb-3">Autenticacion en dos pasos</h4>
+          <p>Activa la autenticacion en dos pasos para añadir una capa protectora a tu cuenta</p>
+          <button type="button" class="btn btn-custom" (click)="onEnable2FA()">
+            Activar autenticacion en dos pasos
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal de confirmación -->
+<div class="modal fade" id="confirmPasswordModal" tabindex="-1" aria-labelledby="confirmPasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmPasswordModalLabel">Confirmación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas cambiar la contraseña?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="confirmPasswordChange()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
