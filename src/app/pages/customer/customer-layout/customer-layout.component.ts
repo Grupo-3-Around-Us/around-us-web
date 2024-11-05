@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { InfoPersonalComponent } from '../info-personal/info-personal.component';
 import { RouterOutlet } from '@angular/router';
@@ -16,5 +17,16 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./customer-layout.component.css']
 })
 export class CustomerLayoutComponent {
-  
+  isConfigRoute: boolean = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.checkIfConfigRoute();
+    });
+  }
+
+  private checkIfConfigRoute() {
+    const currentRoute = this.router.url;
+    this.isConfigRoute = currentRoute.startsWith('/config');
+  }
 }

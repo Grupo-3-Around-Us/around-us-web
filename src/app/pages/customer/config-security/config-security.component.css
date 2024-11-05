@@ -1,7 +1,20 @@
-body {
-  background-color: #5AD8FB20;
-  font-family: Arial, sans-serif;
+:host {
+  flex: 3;
+  height: 100vh;
 }
+
+.d-flex {
+  height: 100%;
+}
+
+.config-security-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .content{
   background-color: #5AD8FB20;
 }

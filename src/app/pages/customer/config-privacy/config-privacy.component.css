@@ -1,7 +1,13 @@
-body {
-  background-color: #E6F7FB;
-  font-family: Arial, sans-serif;
+:host {
+  display: block;
+  flex: 3;
+  height: 100vh;
 }
+
+.d-flex {
+  height: 100%;
+}
+
 .container {
   max-width: 600px;
   margin: 50px auto;
