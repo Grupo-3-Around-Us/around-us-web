@@ -5,12 +5,12 @@ import { ChildrenOutletContexts, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-customer-layout',
+  selector: 'app-form-registro',
   standalone: true,
   imports: [NavbarCustomerComponent, CommonModule, FooterComponent, RouterLink],
-  templateUrl: './customer-layout.component.html',
-  styleUrls: ['./customer-layout.component.css']
+  templateUrl: './form-registro.component.html',
+  styleUrls: ['./form-registro.component.css']
 })
-export class CustomerLayoutComponent {
-  
+export class FormRegistroComponent {
+
 }
