@@ -1,3 +1,4 @@
+import { UserPreferences } from './../shared/models/user-preference.model';
 import { Injectable } from '@angular/core';
 import { User } from '../shared/models/user.model';
 
@@ -17,6 +18,14 @@ export class AuthService {
       phone: '1234567890',
       image: null,
       imageURL: 'https://i.pinimg.com/564x/67/06/9f/67069fc48ec59212e83ae491dfa9f973.jpg',
+      userPreferences: {
+        intereses: ['Hackathons', 'Deep Learning'],
+        tipoEvento: ['Competencias', 'Bootcamps'],
+        lenguajesProgramacion: ['Python', 'C++', 'Java', 'TypeScript'],
+        nivelExperiencia: 'Intermedio',
+        objetivos: ['Networking', 'Competir'],
+        formatoEventos: 'Mixtos',
+      }
     }
   ]
 

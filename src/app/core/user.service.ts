@@ -27,4 +27,8 @@ export class UserService {
   updateUserImage(image: File) {
     this.authService.UpdateUserImage(image);
   }
+
+  getPreferences() {
+    return this.authService.getCurrentUser()?.userPreferences;
+  }
 }

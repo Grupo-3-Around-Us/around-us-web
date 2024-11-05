@@ -1,0 +1,28 @@
+<div class="preferences-container">
+  <div class="micu-preferences-right">
+    <h1>Preferencias</h1>
+    <hr>
+    <div class="micu-preferences-config-container">
+      <div class="micu-preferences-event-container micu-preference" (click)="openModal('event')">
+        <div class="txt-container">
+          <h3>Preferencias de eventos</h3>
+          <p>Configura y administra las preferencias de tu cuenta para asi poder recibir notificaciones sobre eventos que se ajusten mejor a estos intereses.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+      <div class="micu-preferences-notif-container micu-preference" (click)="openModal('notif')">
+        <div class="txt-container">
+          <h3>Notificaciones y recordatorios</h3>
+          <p>Configura las notificaciones de la aplicacion. Controla como, cuando y donde quieres recibir notificaciones.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="event-pref-modal-container" *ngIf="isEventModalOpen">
+  <div class="event-pref-modal">
+      <div class="event-pref-return-button" (click)="closeModal()"><i class="fa-solid fa-arrow-left"></i><span>Regresar</span></div>
+  </div>
+</div>

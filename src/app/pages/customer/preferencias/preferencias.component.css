@@ -1,0 +1,118 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.preferences-container {
+  display: block;
+  height: 100%;
+}
+
+.micu-preferences-right {
+  padding: 1.5em 5em;
+  gap: 0.5em;
+  background-color: #5AD8FB20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+  h1 {
+    font-size: 3em;
+    font-weight: 100;
+  }
+
+  hr {
+    margin: 0;
+    width: 90%;
+    border: 0.2px solid #0002;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.micu-preferences-config-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 100%;
+  padding: 1em;
+}
+
+.micu-preference {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 1.5em;
+  box-shadow: 0 0 10px 0 #0002;
+  align-items: center;
+  background-color: #BAE1FF;;
+
+  i {
+    font-size: 3em;
+  }
+
+  transition: background-color 0.3s ease-in;
+}
+
+.micu-preference:hover{
+  cursor: pointer;
+}
+
+.micu-preference:hover {
+  background-color: #54B5FF;
+}
+
+.micu-preferences-event-container {
+  padding: 1.6em 3em;
+}
+
+.micu-preferences-notif-container {
+  padding: 2.4em 3em;
+}
+
+.txt-container {
+  width: 80%;
+}
+
+
+.event-pref-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000020;
+  backdrop-filter: blur(2px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.event-pref-modal {
+  padding: 1.5em 2em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 50%;
+  border-radius: 2em;
+}
+
+.event-pref-return-button {
+  display: flex;
+  gap: 0.8em;
+  align-items: center;
+  align-content: center;
+}
+
+.event-pref-return-button:hover {
+  cursor: pointer;
+}
