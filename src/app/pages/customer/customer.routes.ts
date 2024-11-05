@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { FormRegistroComponent } from './form-registro/form-registro.component';
 import { CustomerLayoutComponent } from './customer-layout/customer-layout.component';
 import { EventCatalogComponent } from './event-catalog/event-catalog.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
@@ -39,6 +40,10 @@ export const customerRoutes: Routes = [
         path: 'micuenta/preferencias',
         component: PreferenciasComponent,
       },
+      {
+        path: 'form-registro',
+        component: FormRegistroComponent,
+      }
       {
         path: 'config/privacy',
         component: ConfigPrivacyComponent,
