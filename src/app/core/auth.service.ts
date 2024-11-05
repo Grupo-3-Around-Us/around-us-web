@@ -28,6 +28,10 @@ export class AuthService {
     return this._currentUser;
   }
 
+  getCurrentPassword() {
+    return this._currentUser?.password;
+  }
+
   isAuthenticated() {
     return !!this._currentUser;
   }
@@ -42,6 +46,11 @@ export class AuthService {
       };
       reader.readAsDataURL(image);
       this._currentUser.image = image;
+    }
+  }
+  UpdateUserPassword(password: string){
+    if(this._currentUser){
+      this._currentUser.password = password;
     }
   }
 }
