@@ -25,16 +25,13 @@ export const customerRoutes: Routes = [
         component: CustomerHomeComponent,
       },
       {
-        path: 'events/catalog',
-        component: EventCatalogComponent,
-      },
-      {
-        path: 'events/search',
-        component: EventSearchComponent,
-      },
-      {
-        path: 'events/:id',
-        component: EventDetailComponent,
+        path: 'event',
+        children: [
+          {path: 'catalog', component: EventCatalogComponent},
+          {path: 'search', component: EventSearchComponent},
+          {path: ':id', component: EventDetailComponent},
+          {path: 'register-event/:id', component:FormRegistroComponent}
+        ]
       },
       {
         path: 'myevents',
