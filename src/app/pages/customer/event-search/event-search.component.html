@@ -1,1 +1,71 @@
-<p>event-search works!</p>
+<div class="event-search-container">
+   
+   <div class="container">
+      <div class="sidebar">
+         <h2>Filtros de busqueda</h2>
+         <h3>Por categoría</h3>
+         <div class="category-options">
+            <label *ngFor="let category of categories">
+              <input type="radio" name="category" [(ngModel)]="selectedCategory" [value]="category" />
+              <span class="circle"></span> <!-- Representa el círculo -->
+              {{ category }}
+            </label>
+          </div>
+           
+         
+         <h3>Por precio</h3>
+         <label>
+            <input type="radio" name="price" [(ngModel)]="selectedPrice" [value]="0"/>
+            Gratis
+         </label>
+         <label>
+            <input type="radio" name="price" [(ngModel)]="selectedPrice" [value]="1"/>
+            Precio: S/
+            <input type="number" [(ngModel)]="minPrice" value="0"/> - S/
+            <input type="number" [(ngModel)]="maxPrice" value="120"/>
+         </label>
+      </div>
+   
+      <div class="content">
+         <table mat-table [dataSource]="filteredEvents">
+            <ng-container matColumnDef="name">
+               <th mat-header-cell *matHeaderCellDef> Nombre </th>
+               <td mat-cell *matCellDef="let event"> {{ event.name }} </td>
+            </ng-container>
+   
+            <ng-container matColumnDef="category">
+               <th mat-header-cell *matHeaderCellDef> Categoria </th>
+               <td mat-cell *matCellDef="let event"> {{ event.category }} </td>
+            </ng-container>
+   
+            <ng-container matColumnDef="price">
+               <th mat-header-cell *matHeaderCellDef> Precio </th>
+               <td mat-cell *matCellDef="let event"> S/{{ event.price }} </td>
+            </ng-container>
+   
+            <ng-container matColumnDef="programation">
+               <th mat-header-cell *matHeaderCellDef> Programacion </th>
+               <td mat-cell *matCellDef="let event"> {{ event.programation }} </td>
+            </ng-container>
+   
+            <ng-container matColumnDef="eventdescription">
+               <th mat-header-cell *matHeaderCellDef> Descripción </th>
+               <td mat-cell *matCellDef="let event"> {{ event.eventdescription }} </td>
+            </ng-container>
+   
+            <ng-container matColumnDef="actions">
+               <th mat-header-cell *matHeaderCellDef> Acciones </th>
+               <td mat-cell *matCellDef="let event">
+                  <button mat-button (click)="viewEventDetails(event.id)">Ver detalles</button>
+                  <button mat-button (click)="deleteEvent(event.id)">Eliminar</button>
+               </td>
+            </ng-container>
+   
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         </table>
+      </div>
+   </div>
+</div>
+
+ 

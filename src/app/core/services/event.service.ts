@@ -202,8 +202,19 @@ export class EventService {
   ];
   constructor() {}
 
+  private nextId = this.events.length +1;
+
+  addEvent(event: Event): Event {
+    event.id = this.nextId++;
+    this.events.push(event);
+    return event;
+  }
   getEvents(): Event[] {
     return this.events;
+  }
+
+  getEventById(id: number): Event | null {
+    return this.events.find((event) => event.id === id) ?? null;
   }
 
   // Métodos adicionales según sea necesario...
