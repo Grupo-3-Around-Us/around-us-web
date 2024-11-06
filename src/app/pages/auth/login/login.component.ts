@@ -1,3 +1,4 @@
+
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -6,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {Router, RouterLink} from '@angular/router';
+import { AuthService } from '../../../core/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -25,9 +27,11 @@ import {Router, RouterLink} from '@angular/router';
 })
 export class LoginComponent {
 
- loginForm: FormGroup;
- private fb=inject(FormBuilder);
- private snackBar = inject(MatSnackBar);
+  loginForm: FormGroup;
+  private authService = inject(AuthService);
+  private fb=inject(FormBuilder);
+  private snackBar = inject(MatSnackBar);
+  private router = inject(Router);
 
  constructor(){
   this.loginForm=this.fb.group({
@@ -49,8 +53,16 @@ export class LoginComponent {
   onSubmit(){
     if(this.loginForm.valid){
       const credentials = this.loginForm.value;
+
+      const user = this.authService.login(credentials)
+
+      if(user) {
+        this.router.navigate(['customer/home']);
+      }
+
       console.log('Credenciales:', credentials);
       this.showSnackBar('Inicio de sesion exitoso');
     }
   }
+
 }

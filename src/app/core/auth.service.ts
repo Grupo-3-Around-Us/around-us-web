@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../shared/models/user.model';
+import { LoginCredentials } from '../shared/models/login-credentials.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,17 @@ export class AuthService {
       };
       reader.readAsDataURL(image);
       this._currentUser.image = image;
+    }
+  }
+
+  login(credentials: LoginCredentials): User | null {
+    const user = this.Users.find(user => user.email === credentials.email && user.password === credentials.password);
+    if(user) {
+      this._currentUser = user;
+      return user;
+    }
+    else {
+      return null;
     }
   }
 }
