@@ -27,7 +27,7 @@ export class AuthService {
 
   constructor() { }
 
-  private _currentUser: User | null = this.Users[0];
+  private _currentUser: User | null = null;
 
   getCurrentUser() {
     return this._currentUser;
