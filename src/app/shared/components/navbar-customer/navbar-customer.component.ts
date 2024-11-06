@@ -10,9 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./navbar-customer.component.css']
 })
 export class NavbarCustomerComponent {
-  showNotificationMenu = false;
+  showProfileOptions = false;
 
   toggleNotificationMenu() {
-    this.showNotificationMenu = !this.showNotificationMenu;
+    this.showProfileOptions = !this.showProfileOptions;
   }
 }
