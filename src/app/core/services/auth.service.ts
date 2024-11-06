@@ -1,6 +1,7 @@
+
 import { Injectable } from '@angular/core';
-import { User } from '../shared/models/user.model';
-import { LoginCredentials } from '../shared/models/login-credentials.model';
+import { User } from '../../shared/models/user.model';
+import { LoginCredentials } from '../../shared/models/login-credentials.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,9 @@ export class AuthService {
       phone: '1234567890',
       image: null,
       imageURL: 'https://i.pinimg.com/564x/67/06/9f/67069fc48ec59212e83ae491dfa9f973.jpg',
+      userPreferences: {
+        preference:['Hackathons', 'Deep Learning','Competencias', 'Bootcamps','Python', 'C++', 'Java', 'TypeScript', 'Intermedio','Networking', 'Competir', 'Mixtos']
+      }
     }
   ]
 
@@ -27,6 +31,10 @@ export class AuthService {
 
   getCurrentUser() {
     return this._currentUser;
+  }
+
+  getCurrentPassword() {
+    return this._currentUser?.password;
   }
 
   isAuthenticated() {
@@ -54,6 +62,12 @@ export class AuthService {
     }
     else {
       return null;
+    }
+  }
+
+  UpdateUserPassword(password: string){
+    if(this._currentUser){
+      this._currentUser.password = password;
     }
   }
 }

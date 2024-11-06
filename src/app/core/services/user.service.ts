@@ -16,6 +16,14 @@ export class UserService {
       return null;
     }
   }
+  getCurrentUserPassword() {
+    if(this.authService.isAuthenticated()) {
+      return this.authService.getCurrentUser()?.password;
+    }
+    else {
+      return null;
+    }
+  }
 
   actualizarInformacionPersonal(datosActualizados: any) {
     const usuario = this.authService.getCurrentUser();
@@ -26,5 +34,14 @@ export class UserService {
 
   updateUserImage(image: File) {
     this.authService.UpdateUserImage(image);
+  }
+
+  updateUserPassword(password: string) {
+    this.authService.UpdateUserPassword(password);
+  }
+
+
+  getPreferences() {
+    return this.authService.getCurrentUser()?.userPreferences;
   }
 }

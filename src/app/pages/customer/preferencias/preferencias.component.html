@@ -1,0 +1,172 @@
+<div class="preferences-container">
+  <div class="micu-preferences-right">
+    <h1>Preferencias</h1>
+    <hr>
+    <div class="micu-preferences-config-container">
+      <div class="micu-preferences-event-container micu-preference" (click)="openModal('event')">
+        <div class="txt-container">
+          <h3>Preferencias de eventos</h3>
+          <p>Configura y administra las preferencias de tu cuenta para asi poder recibir notificaciones sobre eventos que se ajusten mejor a estos intereses.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+      <div class="micu-preferences-notif-container micu-preference" (click)="openModal('notif')">
+        <div class="txt-container">
+          <h3>Notificaciones y recordatorios</h3>
+          <p>Configura las notificaciones de la aplicacion. Controla como, cuando y donde quieres recibir notificaciones.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="event-pref-modal-container" *ngIf="isEventModalOpen">
+  <div class="event-pref-modal">
+      <div class="event-pref-return-button" (click)="closeModal('event')"><i class="fa-solid fa-arrow-left"></i><span>Regresar</span></div>
+      <div class="event-pref-seleccion-container">
+        <div class="preferencias-container">
+          <h3>Intereses:</h3>
+          <div class="preferencias-lista">
+            <div
+              class="preferencia-item"
+              *ngFor="let interes of intereses"
+              [class.seleccionada]="isPreferenciaSeleccionada(interes)"
+              (click)="togglePreferencia(interes)"
+            >
+              {{interes}}
+            </div>
+          </div>
+        </div>
+        <div class="preferencias-container">
+          <h3>Tipo de Evento:</h3>
+          <div class="preferencias-lista">
+            <div
+              class="preferencia-item"
+              *ngFor="let tipo of tipoEvento"
+              [class.seleccionada]="isPreferenciaSeleccionada(tipo)"
+              (click)="togglePreferencia(tipo)"
+            >
+              {{ tipo }}
+            </div>
+          </div>
+        </div>
+        <div class="preferencias-container">
+          <h3>Lenguajes de Programación:</h3>
+          <div class="preferencias-lista">
+            <div
+              class="preferencia-item"
+              *ngFor="let lenguaje of lenguajedeProgramacion"
+              [class.seleccionada]="isPreferenciaSeleccionada(lenguaje)"
+              (click)="togglePreferencia(lenguaje)"
+            >
+              {{ lenguaje }}
+            </div>
+          </div>
+        </div>
+        <div class="preferencias-container">
+          <h3>Nivel de Experiencia:</h3>
+          <div class="preferencias-lista">
+            <div
+              class="preferencia-item"
+              *ngFor="let nivel of nivelExperiencia"
+              [class.seleccionada]="isPreferenciaSeleccionada(nivel)"
+              (click)="togglePreferencia(nivel)"
+            >
+              {{ nivel }}
+            </div>
+          </div>
+        </div>
+        <div class="preferencias-container">
+          <h3>Objetivos:</h3>
+          <div class="preferencias-lista">
+            <div
+              class="preferencia-item"
+              *ngFor="let objetivo of objetivos"
+              [class.seleccionada]="isPreferenciaSeleccionada(objetivo)"
+              (click)="togglePreferencia(objetivo)"
+            >
+              {{ objetivo }}
+            </div>
+          </div>
+        </div>
+        <div class="preferencias-container">
+          <h3>Formato de Eventos:</h3>
+          <div class="preferencias-lista">
+            <div
+              class="preferencia-item"
+              *ngFor="let formato of formatoEventos"
+              [class.seleccionada]="isPreferenciaSeleccionada(formato)"
+              (click)="togglePreferencia(formato)"
+            >
+              {{ formato }}
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="notif-pref-modal-container" *ngIf="isNotifModalOpen">
+  <div class="notif-pref-model">
+    <div class="notif-pref-return-button" (click)="closeModal('notif')"><i class="fa-solid fa-arrow-left"></i><span>Regresar</span></div>
+    <div class="notif-pref-configs">
+      <div class="notif-pref-config-container">
+        <div class="txt-container">
+          <h5>Notificaciones de proximos eventos</h5>
+          <p>Recibe notificaciones de nuevos eventos</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="notif-pref-config-container">
+        <div class="txt-container">
+          <h5>Recibir recordatorios de eventos</h5>
+          <p>Recibe una notificacion sobre un evento al cual te has inscrito y que pronto empezara</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="notif-pref-config-container">
+        <div class="txt-container">
+          <h5>Notificaciones de proximos eventos</h5>
+          <p>Para recibir notificaciones de eventos que estan a punto de empezar. Ideal para usuarios que buscan oportunidades inmediatas</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="notif-pref-config-container">
+        <div class="txt-container">
+          <h5>Notificaciones de proximos eventos</h5>
+          <p>Elije un por donde deseas recibir notificaciones</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="notif-pref-config-container">
+        <div class="txt-container">
+          <h5>Canal de notificaciones</h5>
+          <p>Elije un por donde deseas recibir notificaciones</p>
+        </div>
+        <select [(ngModel)]="canalesSeleccionados">
+          <option *ngFor="let canal of canalesDisponibles" [value]="canal">
+            {{ canal }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
