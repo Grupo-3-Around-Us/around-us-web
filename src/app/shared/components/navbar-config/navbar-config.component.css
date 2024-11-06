@@ -1,0 +1,78 @@
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.navbar-micu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 38px 30px;
+  gap: 1.5em;
+  background-color: #5AD8FB20;
+  width: 100%;
+  border-right: 1px solid #0001;
+}
+
+.navbar-micu-user-card {
+  display: flex;
+  gap: 1.5rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  padding: 0.7em 3em;
+  border-radius: 1em;
+  background-color: #fff;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+}
+
+.navbar-micu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h6 {
+    font-size: 0.8em;
+  }
+
+  p {
+    font-size: 0.9em;
+    color: #0009;
+  }
+}
+
+
+.navbar-micu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.navbar-buttons {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 1em 2em;
+  border-radius: 1.2em;
+  background-color: #fff;
+  display: flex;
+  gap: 1.5em;
+  span {
+    font-weight: 550;
+  }
+
+  i {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.active-button {
+  transition: background-color 0.3s;
+  background-color: #95BCCB;
+}

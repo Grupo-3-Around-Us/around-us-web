@@ -1,6 +1,6 @@
-import { UserPreferences } from './../shared/models/user-preference.model';
+
 import { Injectable } from '@angular/core';
-import { User } from '../shared/models/user.model';
+import { User } from '../../shared/models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +19,7 @@ export class AuthService {
       image: null,
       imageURL: 'https://i.pinimg.com/564x/67/06/9f/67069fc48ec59212e83ae491dfa9f973.jpg',
       userPreferences: {
-        intereses: ['Hackathons', 'Deep Learning'],
-        tipoEvento: ['Competencias', 'Bootcamps'],
-        lenguajesProgramacion: ['Python', 'C++', 'Java', 'TypeScript'],
-        nivelExperiencia: 'Intermedio',
-        objetivos: ['Networking', 'Competir'],
-        formatoEventos: 'Mixtos',
+        preference:['Hackathons', 'Deep Learning','Competencias', 'Bootcamps','Python', 'C++', 'Java', 'TypeScript', 'Intermedio','Networking', 'Competir', 'Mixtos']
       }
     }
   ]
@@ -35,6 +30,10 @@ export class AuthService {
 
   getCurrentUser() {
     return this._currentUser;
+  }
+
+  getCurrentPassword() {
+    return this._currentUser?.password;
   }
 
   isAuthenticated() {
@@ -51,6 +50,11 @@ export class AuthService {
       };
       reader.readAsDataURL(image);
       this._currentUser.image = image;
+    }
+  }
+  UpdateUserPassword(password: string){
+    if(this._currentUser){
+      this._currentUser.password = password;
     }
   }
 }

@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F0F4F8;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2E8B57;
+}
+.header .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #E0E7EF;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.header .search-bar input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+}
+.header .search-bar i {
+  color: #6C757D;
+}
+.header .icons {
+  display: flex;
+  align-items: center;
+}
+.header .icons i {
+  font-size: 20px;
+  color: #6C757D;
+  margin-left: 20px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.event-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin-right: 20px;
+}
+.event-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.event-card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+.event-card p {
+  color: #6C757D;
+  margin: 0;
+}
+.form-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 500px;
+}
+.form-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="number"],
+.form-container input[type="date"] {
+  width: calc(50% - 10px);
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #E0E7EF;
+  border-radius: 5px;
+  background-color: #E0E7EF;
+  outline: none;
+}
+.form-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+.form-container .checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.form-container .checkbox-group label {
+  margin-right: 20px;
+}
+.form-container .payment-method {
+  margin-top: 20px;
+}
+.form-container .payment-method input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #E0E7EF;
+  border-radius: 5px;
+  background-color: #E0E7EF;
+  outline: none;
+}
+.form-container .payment-method .icon-input {
+  display: flex;
+  align-items: center;
+  background-color: #E0E7EF;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+}
+.form-container .payment-method .icon-input i {
+  margin-right: 10px;
+  color: #6C757D;
+}
+.form-container .submit-btn {
+  background-color: #28A745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
