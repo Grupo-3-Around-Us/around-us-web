@@ -1,0 +1,193 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+/* Estilo para la mitad de la imagen */
+.image-section-login {
+  flex: 1;
+  position: relative;
+}
+
+.background-image-login {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilo para la mitad del formulario de inicio de sesión */
+.form-section-login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* Estilo para el logo y el texto al lado */
+.logo-container-login {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-login {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.logo-text-login {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0A8754;
+}
+
+/* Botón "Volver al inicio" */
+.return-button-login {
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.return-button-login::before {
+  content: "←"; /* Añadir la flecha como un pseudo-elemento */
+  margin-right: 5px; /* Espaciado entre la flecha y el texto */
+}
+
+/* Estilos para el formulario */
+.login-form-section {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.login-form-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.login-form-section label {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.login-form-section input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.login-form-section h2 {
+  margin-bottom: 5px; /* Reduce el margen inferior del título */
+  font-size: 40px;
+  color: #08B16B;
+}
+
+.login-form-section h3 {
+  margin-top: 0; /* Elimina el margen superior del subtítulo */
+  margin-bottom: 20px; /* Ajusta el margen inferior según prefieras */
+  font-size: 12px;
+  color: #666; /* Color más suave para diferenciarlo */
+}
+
+/* Estilo para el icono del ojo */
+.password-container-login {
+  position: relative;
+}
+
+.password-icon-login {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilo para el cuadro de selección */
+.checkbox-container-login {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.checkbox-container-login input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px; /* Espaciado entre el cuadrado y el texto */
+}
+
+/* Ajustar la posición de "Recordar Contraseña" */
+.login-form-section h4 {
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 15px; /* Ajuste de espaciado */
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para el texto '¿Aun no tienes una cuenta?' */
+.register-login {
+  padding: 2%;
+  font-size: 14px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.register-login a {
+  color: blue;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.register-login a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para el botón de iniciar sesión */
+.login-form-section button {
+  width: auto;
+  padding: 8px 40px; /* Reduce el relleno */
+  font-size: 14px;
+  color: black;
+  background-color: #12D585;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form-section button:hover {
+  background-color: #555;
+}
+
+/* Estilo para el enlace de '¿Olvidaste tu contraseña?' */
+.forgot-password-login {
+  font-size: 14px;
+  color: #333;
+  margin-top: 15px;
+}
+
+.forgot-password-login a {
+  color: blue;
+}
