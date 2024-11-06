@@ -7,12 +7,13 @@ import { MatTableModule } from '@angular/material/table';
 import { EventService } from '../../../core/services/event.service';
 import { Router } from '@angular/router';
 import { Event as CustomEvent } from '../../../shared/models/event.model';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-event-search',
   standalone: true,
-  imports: [FormsModule, MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule],
+  imports: [FormsModule, MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule, CommonModule],
   templateUrl: './event-search.component.html',
   styleUrls: ['./event-search.component.css']
 })
