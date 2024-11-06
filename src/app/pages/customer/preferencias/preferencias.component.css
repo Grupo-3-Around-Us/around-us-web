@@ -1,0 +1,288 @@
+:host {
+  display: block;
+  height: 100vh;
+  flex: 3;
+}
+
+.preferences-container {
+  display: block;
+  height: 100%;
+}
+
+.micu-preferences-right {
+  padding: 1.5em 5em;
+  gap: 0.5em;
+  background-color: #5AD8FB20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+  h1 {
+    font-size: 3em;
+    font-weight: 100;
+  }
+
+  hr {
+    margin: 0;
+    width: 90%;
+    border: 0.2px solid #0002;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.micu-preferences-config-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 100%;
+  padding: 1em;
+}
+
+.micu-preference {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 1.5em;
+  box-shadow: 0 0 10px 0 #0002;
+  align-items: center;
+  background-color: #BAE1FF;;
+
+  i {
+    font-size: 3em;
+  }
+
+  transition: background-color 0.3s ease-in;
+}
+
+.micu-preference:hover{
+  cursor: pointer;
+}
+
+.micu-preference:hover {
+  background-color: #54B5FF;
+}
+
+.micu-preferences-event-container {
+  padding: 1.6em 3em;
+}
+
+.micu-preferences-notif-container {
+  padding: 2.4em 3em;
+}
+
+.txt-container {
+  width: 80%;
+}
+
+
+.event-pref-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000020;
+  backdrop-filter: blur(2px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+}
+
+.event-pref-modal {
+  padding: 1.5em 2em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  height: 80%;
+  width: 50%;
+  border-radius: 2em;
+}
+
+.event-pref-return-button {
+  display: flex;
+  gap: 0.8em;
+  align-items: center;
+  align-content: center;
+}
+
+.event-pref-return-button:hover {
+  cursor: pointer;
+}
+
+.event-pref-seleccion-container {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.preferencias-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+.preferencias-lista > .seleccionada {
+  background-color: #3BEDA3;
+}
+
+.preferencias-lista {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.preferencias-lista > .preferencia-item {
+  display: flex;
+  padding: 0.7em 1em;
+  border-radius: 1.3em;
+  border: 1px solid #2C92FF;
+
+  transition: background-color 0.1s ease-in;
+}
+
+.preferencias-lista > .preferencia-item:hover {
+  cursor: pointer;
+}
+
+
+.notif-pref-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000020;
+  backdrop-filter: blur(2px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+}
+
+.notif-pref-model {
+  padding: 1.5em 2em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  height: 80%;
+  width: 50%;
+  border-radius: 2em;
+}
+
+.notif-pref-return-button {
+  display: flex;
+  gap: 0.8em;
+  align-items: center;
+  align-content: center;
+}
+
+.notif-pref-return-button:hover {
+  cursor: pointer;
+}
+
+
+.notif-pref-configs {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  overflow-y: auto;
+  padding: 1em;
+}
+
+.notif-pref-config-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .txt-container {
+    h5 {
+      font-size: 1.8em;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #B91C1C;
+  transition: .4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+
+select {
+  padding: 0.5em;
+  border-radius: 1em;
+  border: none;
+  background-color: #6399AD;
+}
+
+select > option {
+  padding: 0.5em;
+  background-color: #C1D9E0;
+}
+
+select:focus {
+  outline: none;
+}

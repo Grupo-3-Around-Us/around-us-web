@@ -40,4 +40,8 @@ export class UserService {
     this.authService.UpdateUserPassword(password);
   }
 
+
+  getPreferences() {
+    return this.authService.getCurrentUser()?.userPreferences;
+  }
 }
