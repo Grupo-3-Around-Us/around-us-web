@@ -58,11 +58,6 @@ export class EventSearchComponent {
         return matchesCategory && matchesPrice && matchesSearch;
     });
 }
-
-  deleteEvent(eventId: number): void {
-    console.log('Eliminar evento con ID: ', eventId);
-  }
-
   viewEventDetails(eventId: number): void {
     this.router.navigate([`/customer/events/${eventId}`]); // Ruta para detalles del evento
   }
