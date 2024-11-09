@@ -3,7 +3,7 @@
     <h1>Informacion de la cuenta</h1>
     <hr>
     <div class="micu-infoper-actu">
-      <form [formGroup]="userForm" >
+      <form [formGroup]="userForm" (ngSubmit)="actualizarInformacionPersonal()">
         <div>
           <label>Nombre de usuario</label>
           <input formControlName="username" type="text" id="username" name="username" [(ngModel)]="user.username" required>

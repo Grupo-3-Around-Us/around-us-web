@@ -38,5 +38,8 @@ export class InfoPersonalComponent {
     }
   }
 
-  
+  actualizarInformacionPersonal(): void {
+    this.userService.actualizarInformacionPersonal(this.userForm);
+    this.user = this.userService.getCurrentUserInfo();
+  }
 }
