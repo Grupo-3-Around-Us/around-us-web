@@ -16,18 +16,32 @@ export class AuthService {
       lastName: 'Rodriguez',
       email: 'john.doe@example.com',
       password: 'password',
-      phone: '1234567890',
+      phone: '123456789',
       image: null,
       imageURL: 'https://i.pinimg.com/564x/67/06/9f/67069fc48ec59212e83ae491dfa9f973.jpg',
       userPreferences: {
         preference:['Hackathons', 'Deep Learning','Competencias', 'Bootcamps','Python', 'C++', 'Java', 'TypeScript', 'Intermedio','Networking', 'Competir', 'Mixtos']
       }
-    }
+    },
+    {
+      id: 2,
+      username: 'admin',
+      firstName: 'admin',
+      lastName: 'admin',
+      email: 'admin@example.com',
+      password: 'admin123',
+      phone: '123456789',
+      image: null,
+      imageURL: 'https://i.pinimg.com/564x/67/06/9f/67069fc48ec59212e83ae491dfa9f973.jpg',
+      userPreferences: {
+        preference:['Hackathons', 'Deep Learning','Competencias', 'Bootcamps','Python', 'C++', 'Java', 'TypeScript', 'Intermedio','Networking', 'Competir', 'Mixtos']
+      }
+    },
   ]
 
   constructor() { }
 
-  private _currentUser: User | null = null;
+  private _currentUser: User | null = this.Users[1];
 
   getCurrentUser() {
     return this._currentUser;
@@ -38,7 +52,7 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    return !!this._currentUser;
+    return this._currentUser ? true : false;
   }
 
   UpdateUserImage(image: File) {

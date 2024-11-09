@@ -16,8 +16,9 @@
         <img src="assets/aroundus-logo.png" alt="Logo" class="logo-login" />
       </div>
 
-
-      <button class="return-button-login" routerLink="">Volver al inicio</button>
+      <button class="return-button-login" routerLink="">
+        Volver al inicio
+      </button>
     </div>
     <!-- Formulario de inicio de sesión -->
     <div class="login-form-section">
@@ -27,19 +28,25 @@
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <!-- Campo de correo electrónico -->
         <label for="email-login">Correo electrónico:</label>
-        <input matInput formControlName="email" type="email" id="email-login" required placeholder="Introduce tu email"/>
+        <input
+          matInput
+          formControlName="email"
+          id="email-login"
+          required
+          placeholder="Introduce tu email"
+        />
 
         <!-- Campo de contraseña con icono de ojo -->
-        <div class="form-group">
-            <div class="password-container-login">
-              <label for="password-login">Contraseña</label>
-              <div class="form-password-container">
-                <input formControlName="password" type="password" id="password-login" required placeholder="Introduce tu contraseña"/>
-                <span class="password-icon-login" onclick="togglePassword()"
-                  >👁️</span>
-              </div>
-            </div>
-        </div>
+
+        <label for="password-login">Contraseña</label>
+        <input
+          formControlName="password"
+          type="password"
+          id="password-login"
+          required
+          placeholder="Introduce tu contraseña"
+        />
+
         <div class="checkbox-container-login">
           <input type="checkbox" id="remember-login" />
           <h4 for="remember-login">Recordar Contraseña</h4>
@@ -52,7 +59,6 @@
       <div class="register-login">
         ¿Aún no tienes una cuenta? <a href="#">Regístrate</a>
       </div>
-
 
       <!-- Enlace "¿Olvidaste tu contraseña?" -->
       <div class="forgot-password-login">
