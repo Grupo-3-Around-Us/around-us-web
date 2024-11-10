@@ -19,6 +19,6 @@ export class EventDetailComponent implements OnInit {
   ngOnInit(): void {
     const eventId = Number(this.route.snapshot.paramMap.get('id'));
     const foundEvent = this.eventService.getEventById(eventId);
-    this.event = foundEvent !== null ? foundEvent : undefined; // Asigna undefined si es null
+    this.event = foundEvent !== null ? foundEvent : undefined;
   }
 }

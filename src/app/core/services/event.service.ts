@@ -8,7 +8,7 @@ export class EventService {
   private events: Event[] = [
     {
       id: 1,
-      name: 'AYNI Hackathon 2024',
+      name: 'Ayni Hackaton APEC Perú 2024',
       programation: {
         date: new Date('2024-11-08'),
         startTime: '9:00 am',
@@ -16,7 +16,7 @@ export class EventService {
           'Sede región Oriente: Universidad Nacional Toribio Rodríguez de Mendoza - Chachapoyas, Amazonas\nSede región Norte: Universidad Privada Antenor Orrego - Trujillo, La Libertad\nSede región Centro: Universidad Peruana de Ciencias Aplicadas - Monterrico, Lima\nSede región Sur: Universidad Católica San Pablo San Lazaro - Arequipa',
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/hackathon-evento.png',
       category: { name: 'IA Event' },
       isOpen: true,
       eventdescription: {
@@ -52,7 +52,7 @@ export class EventService {
         place: 'Algorythm Online Classroom',
       },
       price: 49.99,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/algorythm-evento.png',
       category: {
         name: 'IA Event',
       },
@@ -79,7 +79,7 @@ export class EventService {
         place: 'Evento en formato virtual - Plataforma de transmisión en línea',
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/ai-connect-evento.png',
       category: {
         name: 'IA Event',
       },
@@ -106,7 +106,7 @@ export class EventService {
         place: 'Evento en formato virtual - Plataforma en línea',
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/women-ai-evento.png',
       category: {
         name: 'IA Event',
       },
@@ -133,7 +133,7 @@ export class EventService {
         place: 'Centro de Convenciones - Lima, Perú'
       },
       price: 99.99,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/PMxIA-evento.png',
       category: {
         name: "IA Event"
       },
@@ -158,7 +158,7 @@ export class EventService {
         place: 'Universidad de Ingeniería y Tecnología (UTEC) - Barranco, Lima, Perú'
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/codeon-evento.png',
       category: {
         name: "Programming Event"
       },
@@ -183,7 +183,7 @@ export class EventService {
         place: 'Worthit Hub - Miraflores, Lima, Perú'
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/pisco-night-evento.png',
       category: {
         name: "Networking Event"
       },

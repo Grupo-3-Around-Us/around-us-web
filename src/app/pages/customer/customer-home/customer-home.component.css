@@ -13,14 +13,6 @@
   min-height: 100vh;
 }
 
-/* Contenedor del navbar de mi cuenta */
-.layout-container > app-navbar-mi-cuenta {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-}
-
 /* Contenedor del contenido principal */
 
 /*-----------------------------------------------------------Eventos de Interés-----------------------------------------------------------*/
@@ -113,7 +105,6 @@
 .discover-section {
   margin-top: 2rem;
   padding: 2rem 0;
-  margin-left: 1rem;
 }
 
 .discover-section h2 {
@@ -129,19 +120,6 @@ app-footer {
 
 /*---------------------------------------------------------------Descubre Grupos---------------------------------------------------------------*/
 
-.discover-groups-container {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #F0F8FA;
-  margin-top: 2rem;
-  border-radius: 15px;
-}
-
-.discover-groups-title {
-  font-size: 24px;
-  color: #141516;
-  margin-bottom: 20px;
-}
 
 .buttons {
   display: flex;
@@ -167,4 +145,18 @@ app-footer {
 .button-text {
   font-size: 16px;
   color: #141516;
+}
+
+.event-row {
+  display: flex;
+  gap: 3em;
+  flex-direction: row;
+  padding: 0 4em;
+  flex-wrap: wrap;
+
+  .event-item {
+    flex: 1;
+    min-width: 240px;
+    max-width: 300px;
+  }
 }
