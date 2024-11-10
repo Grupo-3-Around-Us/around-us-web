@@ -11,4 +11,5 @@ export interface Event {
     category: Category;
     isOpen: boolean;
     eventdescription: EventDescription;
+    eventLink: string;
 }

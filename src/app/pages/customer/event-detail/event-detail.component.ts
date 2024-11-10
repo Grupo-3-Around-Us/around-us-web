@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { EventService } from '../../../core/services/event.service';
 import { Event } from '../../../shared/models/event.model';
 import { CommonModule } from '@angular/common';
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-event-detail',
   standalone:true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './event-detail.component.html',
   styleUrls: ['./event-detail.component.css']
 })

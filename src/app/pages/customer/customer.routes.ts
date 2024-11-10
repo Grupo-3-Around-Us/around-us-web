@@ -49,7 +49,7 @@ export const customerRoutes: Routes = [
         ]
       },
       {
-        path: 'form-registro',
+        path: 'form-registro/:id',
         component: FormRegistroComponent,
       },
       {

@@ -1,3 +1,3 @@
 export interface Category {
-    name: 'IA Event' | 'Hackaton' | 'Programming Event' | 'Networking Event';
+  name: "IA Event" | "Programming Event" | "Networking Event" | "Hackaton";
 }
