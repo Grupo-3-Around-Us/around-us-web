@@ -3,26 +3,26 @@
     <h1>Informacion de la cuenta</h1>
     <hr>
     <div class="micu-infoper-actu">
-      <form (ngSubmit)="actualizarInformacionPersonal()">
+      <form [formGroup]="userForm" (ngSubmit)="actualizarInformacionPersonal()">
         <div>
           <label>Nombre de usuario</label>
-          <input type="text" id="username" name="username" [(ngModel)]="userForm.username" required>
+          <input formControlName="username" type="text" id="username" name="username" [(ngModel)]="user.username" required>
         </div>
         <div>
           <label>Nombres</label>
-          <input type="text" id="nombre" name="nombre" [(ngModel)]="userForm.firstName" required>
+          <input formControlName="nombre" type="text" id="nombre" name="nombre" [(ngModel)]="user.firstName" required>
         </div>
         <div>
           <label>Apellidos</label>
-          <input type="text" id="apellido" name="apellido" [(ngModel)]="userForm.lastName" required>
+          <input formControlName="apellido" type="text" id="apellido" name="apellido" [(ngModel)]="user.lastName" required>
         </div>
         <div>
           <label>Email</label>
-          <input type="email" id="email" name="email" [(ngModel)]="userForm.email" required>
+          <input formControlName="email" type="email" id="email" name="email" [(ngModel)]="user.email" required>
         </div>
         <div>
           <label>Telefono</label>
-          <input type="text" id="telefono" name="telefono" [(ngModel)]="userForm.phone" required>
+          <input formControlName="telefono" type="text" id="telefono" name="telefono" [(ngModel)]="user.phone" required>
         </div>
 
         <button type="submit">Actualizar Datos</button>

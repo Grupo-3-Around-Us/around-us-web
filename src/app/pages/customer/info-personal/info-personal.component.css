@@ -108,6 +108,13 @@ form > button {
   justify-content: center;
   gap: 1.5em;
 
+  img {
+    width: 411px;
+    max-width: 411px;
+    height: 411px;
+    max-height: 411px;
+    background-position: center;
+  }
   h2 {
     font-size: 2em;
     font-weight: 100;
