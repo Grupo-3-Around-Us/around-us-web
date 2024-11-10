@@ -1,3 +1,4 @@
+import { EventCard1Component } from './../../../shared/components/event-card-1/event-card-1.component';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router'; // Importa RouterModule
@@ -8,7 +9,7 @@ import { EventService } from '../../../core/services/event.service';
 @Component({
   selector: 'app-customer-home',
   standalone: true,
-  imports: [RouterModule, CommonModule], // Agrega RouterModule aquí
+  imports: [RouterModule, CommonModule, EventCard1Component], // Agrega RouterModule aquí
   templateUrl: './customer-home.component.html',
   styleUrls:['./customer-home.component.css']
 })

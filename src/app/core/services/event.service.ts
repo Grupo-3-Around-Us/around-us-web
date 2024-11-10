@@ -8,7 +8,7 @@ export class EventService {
   private events: Event[] = [
     {
       id: 1,
-      name: 'AYNI Hackathon 2024',
+      name: 'Ayni Hackaton APEC Perú 2024',
       programation: {
         date: new Date('2024-11-08'),
         startTime: '9:00 am',
@@ -16,33 +16,27 @@ export class EventService {
           'Sede región Oriente: Universidad Nacional Toribio Rodríguez de Mendoza - Chachapoyas, Amazonas\nSede región Norte: Universidad Privada Antenor Orrego - Trujillo, La Libertad\nSede región Centro: Universidad Peruana de Ciencias Aplicadas - Monterrico, Lima\nSede región Sur: Universidad Católica San Pablo San Lazaro - Arequipa',
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/hackathon-evento.png',
       category: { name: 'IA Event' },
-      isOpen: true,
+      isOpen: false,
       eventdescription: {
         description:
-          'AYNI Hackathon es un evento nacional organizado por el Ministerio de Relaciones Exteriores...',
+          'AYNI Hackathon es un evento nacional organizado por el Ministerio de Relaciones Exteriores y la Asociación de Peruanos en Silicon Valley (PeruSV), en el marco de APEC Ciudadano que fomenta la innovación y soluciones digitales que promuevan la transición del Perú a una economía formal según los objetivos APEC Perú 2024. La hackathon presenta tres categorías de retos, previamente modelados junto a entidades colaboradoras que aportarán casos prácticos y datos contextualizados para asegurar que los participantes aborden los problemas desde perspectivas fundamentadas.',
         objetivos: [
           'Generar soluciones tecnológicas alineadas con los objetivos de APEC PERÚ 2024...',
           'Descentralizar oportunidades brindando acceso equitativo...',
           'Incubar las mejores propuestas para su validación y escalamiento.',
         ],
-        acercaDelConcurso: `Duración: 08 y 09 de Noviembre de 9:00 am a 5:00 pm.
-              Sedes: Cuatro universidades comprometidas a proporcionar la infraestructura y condiciones óptimas para el desarrollo del evento.
-              Región Norte: Universidad Privada Antenor Orrego, Trujillo - La Libertad;
-              Región Centro: Universidad de Ciencias Aplicadas UPC, Surco - Lima;
-              Región Sur: Universidad Católica San Pablo, San Lazaro - Arequipa;
-              Región Oriente: Universidad Santo Toribio Rodriguez de Mendoza, Chachapoyas - Amazonas.
-              Participantes: Los competidores pueden postular en equipos de 2 a 4 personas.
-              Mentorías: Los competidores contarán con mentorías virtuales y presenciales por parte de expertos nacionales e internacionales en áreas especializadas de desarrollo de producto, tecnología y UX/UI.
-              La competencia: Los equipos participarán en una primera ronda regional en su sede donde se seleccionará un ganador por categoría de reto. El ganador de cada categoría pasará a una ronda nacional entre las cuatro sedes, donde dará una presentación virtual al jurado nacional.
-              Premiación: Los proyectos ganadores ingresarán a la incubadora de la universidad donde participaron. Cada miembro de un equipo ganador recibirá US$250.00 (doscientos cincuenta dólares americanos).`,
+        acercaDelConcurso: `Duración: 08 y 09 de Noviembre de 9:00 am a 5:00 pm.\n\nSedes: Cuatro universidades comprometidas a proporcionar la infraestructura y condiciones óptimas para el desarrollo del evento.\n\nRegión Norte: Universidad Privada Antenor Orrego, Trujillo - La Libertad;\nRegión Centro: Universidad de Ciencias Aplicadas UPC, Surco - Lima;\nRegión Sur: Universidad Católica San Pablo, San Lazaro - Arequipa;\nRegión Oriente: Universidad Santo Toribio Rodriguez de Mendoza, Chachapoyas - Amazonas.\n\nParticipantes: Los competidores pueden postular en equipos de 2 a 4 personas.\nMentorías: Los competidores contarán con mentorías virtuales y presenciales por parte de expertos nacionales e internacionales en áreas especializadas de desarrollo de producto, tecnología y UX/UI.\nLa competencia: Los equipos participarán en una primera ronda regional en su sede donde se seleccionará un ganador por categoría de reto. El ganador de cada categoría pasará a una ronda nacional entre las cuatro sedes, donde dará una presentación virtual al jurado nacional.\nPremiación: Los proyectos ganadores ingresarán a la incubadora de la universidad donde participaron. Cada miembro de un equipo ganador recibirá US$250.00 (doscientos cincuenta dólares americanos).
+`,
         organizadores: [
           'Ministerio de Relaciones Exteriores',
           'Asociación de Peruanos en Silicon Valley (PeruSV)',
         ], // Agregar organizadores
       },
+      eventLink: 'https://www.aynihackathon.com/',
     },
+
     {
       id: 2,
       name: 'Algorythm+ | How to Navigate AI Landscape?',
@@ -52,7 +46,7 @@ export class EventService {
         place: 'Algorythm Online Classroom',
       },
       price: 49.99,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/algorythm-evento.png',
       category: {
         name: 'IA Event',
       },
@@ -69,6 +63,7 @@ export class EventService {
           'Duración: Viernes a partir de las 19:00 horas, con una duración estimada de 3 horas.\nPlataforma: Algorythm Online Classroom, permitiendo a los participantes asistir de forma virtual desde cualquier lugar.',
         organizadores: ['Algorythm'],
       },
+      eventLink: 'https://www.eventbrite.com/e/algorythm-how-to-navigate-ai-landscape-tickets-752875720547',
     },
     {
       id: 3,
@@ -79,7 +74,7 @@ export class EventService {
         place: 'Evento en formato virtual - Plataforma de transmisión en línea',
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/ai-connect-evento.png',
       category: {
         name: 'IA Event',
       },
@@ -96,6 +91,7 @@ export class EventService {
           'Duración: El evento se llevará a cabo el 5 de noviembre, con una duración estimada de 4 horas.\nFormato: Virtual, permitiendo la participación desde cualquier lugar del mundo a través de una plataforma de streaming.',
         organizadores: ['AI Connect'],
       },
+      eventLink: 'https://lu.ma/a4e7wqnm',
     },
     {
       id: 4,
@@ -106,7 +102,7 @@ export class EventService {
         place: 'Evento en formato virtual - Plataforma en línea',
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/women-ai-evento.png',
       category: {
         name: 'IA Event',
       },
@@ -123,6 +119,7 @@ export class EventService {
           'Duración: Este evento tendrá una duración de 3 horas y media, ofreciendo una combinación de charlas, paneles de discusión y sesiones de preguntas y respuestas.\nFormato: Virtual, brindando la posibilidad de participar desde cualquier lugar a través de una plataforma de videoconferencia.',
         organizadores: ['Women in AI & Blockchain'],
       },
+      eventLink: 'https://lu.ma/k3ccvb9i?locale=es',
     },
     {
       id: 5,
@@ -133,9 +130,9 @@ export class EventService {
         place: 'Centro de Convenciones - Lima, Perú'
       },
       price: 99.99,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/PMxIA-evento.png',
       category: {
-        name: "IA Event"
+        name: 'IA Event'
       },
       isOpen: true,
       eventdescription: {
@@ -147,7 +144,8 @@ export class EventService {
         ],
         acercaDelConcurso: "Duración: Este evento de un día completo incluye conferencias, paneles y talleres prácticos que permitirán a los participantes aplicar lo aprendido.\nFormato: Presencial, ofreciendo una oportunidad única para conectarse y aprender de expertos en el sector de proyectos y tecnología.",
         organizadores: ["PMxIA Day"]
-      }
+      },
+      eventLink: 'https://lu.ma/051o9s3r?locale=es',
     },
     {
       id: 6,
@@ -158,11 +156,11 @@ export class EventService {
         place: 'Universidad de Ingeniería y Tecnología (UTEC) - Barranco, Lima, Perú'
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/codeon-evento.png',
       category: {
-        name: "Programming Event"
+        name: 'Programming Event'
       },
-      isOpen: true,
+      isOpen: false,
       eventdescription: {
         description: "CodeOn 2024 es una conferencia y maratón de programación dirigida a entusiastas de la tecnología, desarrolladores y estudiantes, organizada para inspirar e impulsar el talento en el mundo del desarrollo de software. Este evento combina charlas, talleres prácticos y una hackathon para que los participantes puedan explorar nuevas tecnologías, aprender de expertos de la industria y trabajar en proyectos innovadores.",
         objetivos: [
@@ -172,7 +170,8 @@ export class EventService {
         ],
         acercaDelConcurso: "Duración: 9 horas de actividades intensivas, incluyendo charlas y un reto de programación en equipo.\nFormato: Presencial, proporcionando una experiencia práctica en tiempo real.",
         organizadores: ["CodeOn 2024"]
-      }
+      },
+      eventLink: 'https://codeon2024.vercel.app',
     },
     {
       id: 7,
@@ -183,11 +182,11 @@ export class EventService {
         place: 'Worthit Hub - Miraflores, Lima, Perú'
       },
       price: 0,
-      imageUrl: '../../../../public/assets/customer-home/algorythm-evento.png',
+      imageUrl: 'assets/customer-home/pisco-night-evento.png',
       category: {
-        name: "Networking Event"
+        name: 'Networking Event'
       },
-      isOpen: true,
+      isOpen: false,
       eventdescription: {
         description: "Pisco Sour Tech Night by Worthit es una noche de networking y tecnología, organizada por la plataforma de emprendimiento Worthit, que invita a la comunidad tecnológica a compartir ideas, proyectos y experiencias en un ambiente relajado. Con la combinación perfecta de innovación y cultura peruana, el evento incluirá una degustación de Pisco Sour, permitiendo a los asistentes disfrutar de un espacio social mientras exploran las últimas tendencias en tecnología.",
         objetivos: [
@@ -197,9 +196,10 @@ export class EventService {
         ],
         acercaDelConcurso: "Duración: 3 horas de actividades y networking.\nFormato: Presencial, creando un ambiente amigable e informal para facilitar la conexión entre asistentes.",
         organizadores: ["Worthit"]
-      }
+      },
+      eventLink: 'https://lu.ma/yz48y90z',
     },
-  ];
+  ].map(event => ({...event, programation: { ...event.programation, place: event.programation.place.replace(/\n/g, '<br>') }, eventdescription: { ...event.eventdescription, acercaDelConcurso: event.eventdescription.acercaDelConcurso.replace(/\n/g, '<br>') }, category: { name: event.category.name as any } }));
   constructor() {}
 
   private nextId = this.events.length +1;
