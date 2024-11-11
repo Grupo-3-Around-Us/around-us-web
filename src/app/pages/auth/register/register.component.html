@@ -92,7 +92,7 @@
         </p>
 
 
-        <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+        <button type="submit" (onclick)="onSubmit()" [disabled]="registerForm.invalid">Registrarse</button>
       </form>
 
       <!-- Texto "¿Ya tienes una cuenta? Inicia sesión" -->
