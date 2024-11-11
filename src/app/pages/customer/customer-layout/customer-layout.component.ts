@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { InfoPersonalComponent } from '../info-personal/info-personal.component';
 import { RouterOutlet } from '@angular/router';
 import { NavbarMiCuentaComponent } from '../../../shared/components/navbar-mi-cuenta/navbar-mi-cuenta.component';
 import { NavbarCustomerComponent } from '../../../shared/components/navbar-customer/navbar-customer.component';
@@ -17,11 +16,6 @@ import { EventSearchComponent } from '../event-search/event-search.component';
 })
 export class CustomerLayoutComponent {
   isConfigRoute: boolean = false;
-  searchQuery: string = '';
-
-  onSearchQueryChanged(query: string): void {
-     this.searchQuery = query;
-  }
 
   constructor(private router: Router) {
     this.router.events.subscribe(() => {

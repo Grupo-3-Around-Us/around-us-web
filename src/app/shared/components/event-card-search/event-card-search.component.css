@@ -1,0 +1,30 @@
+.event-card-search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.3em 2.6em;
+  border-radius: 1.4em;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.event-card-search-image {
+  height: 150px;
+  width: 45%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1em;
+  }
+}
+
+.event-card-search-info {
+  width: 50%;
+}
+
+.event-card-search-info h3 {
+  font-size: 2.4em;
+  color: #4a4a4a;
+  margin: 0;
+}

@@ -14,10 +14,11 @@ export class EventService {
         startTime: '9:00 am',
         place:
           'Sede región Oriente: Universidad Nacional Toribio Rodríguez de Mendoza - Chachapoyas, Amazonas\nSede región Norte: Universidad Privada Antenor Orrego - Trujillo, La Libertad\nSede región Centro: Universidad Peruana de Ciencias Aplicadas - Monterrico, Lima\nSede región Sur: Universidad Católica San Pablo San Lazaro - Arequipa',
-      },
+        eventMode: 'Presencial',
+        },
       price: 0,
       imageUrl: 'assets/customer-home/hackathon-evento.png',
-      category: { name: 'IA Event' },
+      category: { name: 'Hackathon' },
       isOpen: false,
       eventdescription: {
         description:
@@ -44,6 +45,7 @@ export class EventService {
         date: new Date('2024-11-08'),
         startTime: '7:00 pm',
         place: 'Algorythm Online Classroom',
+        eventMode: 'Virtual',
       },
       price: 49.99,
       imageUrl: 'assets/customer-home/algorythm-evento.png',
@@ -72,6 +74,7 @@ export class EventService {
         date: new Date('2024-11-05'),
         startTime: '4:00 pm',
         place: 'Evento en formato virtual - Plataforma de transmisión en línea',
+        eventMode: 'Presencial',
       },
       price: 0,
       imageUrl: 'assets/customer-home/ai-connect-evento.png',
@@ -100,6 +103,7 @@ export class EventService {
         date: new Date('2024-11-06'),
         startTime: '5:00 pm',
         place: 'Evento en formato virtual - Plataforma en línea',
+        eventMode: 'Presencial',
       },
       price: 0,
       imageUrl: 'assets/customer-home/women-ai-evento.png',
@@ -127,7 +131,8 @@ export class EventService {
       programation: {
         date: new Date('2024-11-08'),
         startTime: '8:30 am',
-        place: 'Centro de Convenciones - Lima, Perú'
+        place: 'Centro de Convenciones - Lima, Perú',
+        eventMode: 'Presencial',
       },
       price: 99.99,
       imageUrl: 'assets/customer-home/PMxIA-evento.png',
@@ -153,7 +158,8 @@ export class EventService {
       programation: {
         date: new Date('2024-11-09'),
         startTime: '9:00 am',
-        place: 'Universidad de Ingeniería y Tecnología (UTEC) - Barranco, Lima, Perú'
+        place: 'Universidad de Ingeniería y Tecnología (UTEC) - Barranco, Lima, Perú',
+        eventMode: 'Presencial',
       },
       price: 0,
       imageUrl: 'assets/customer-home/codeon-evento.png',
@@ -179,7 +185,8 @@ export class EventService {
       programation: {
         date: new Date('2024-11-04'),
         startTime: '7:00 pm',
-        place: 'Worthit Hub - Miraflores, Lima, Perú'
+        place: 'Worthit Hub - Miraflores, Lima, Perú',
+        eventMode: 'Presencial',
       },
       price: 0,
       imageUrl: 'assets/customer-home/pisco-night-evento.png',
@@ -199,7 +206,7 @@ export class EventService {
       },
       eventLink: 'https://lu.ma/yz48y90z',
     },
-  ].map(event => ({...event, programation: { ...event.programation, place: event.programation.place.replace(/\n/g, '<br>') }, eventdescription: { ...event.eventdescription, acercaDelConcurso: event.eventdescription.acercaDelConcurso.replace(/\n/g, '<br>') }, category: { name: event.category.name as any } }));
+  ].map(event => ({...event, programation: { ...event.programation, place: event.programation.place.replace(/\n/g, '<br>'), eventMode: event.programation.eventMode as any}, eventdescription: { ...event.eventdescription, acercaDelConcurso: event.eventdescription.acercaDelConcurso.replace(/\n/g, '<br>') }, category: { name: event.category.name as any } }));
   constructor() {}
 
   private nextId = this.events.length +1;
@@ -209,6 +216,7 @@ export class EventService {
     this.events.push(event);
     return event;
   }
+
   getEvents(): Event[] {
     return this.events;
   }
