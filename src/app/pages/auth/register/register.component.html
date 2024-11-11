@@ -16,14 +16,14 @@
         <img src="assets/aroundus-logo.png" alt="Logo" class="logo-register" />
       </div>
 
-      <button class="return-button-register" routerLink="/">
+      <button class="return-button-register" routerLink="">
         Volver al inicio
       </button>
     </div>
     <!-- Formulario de registro -->
     <div class="register-form-section">
-      <h2>Registro</h2>
-      <h3>¡Bienvenido! Completa los datos para registrarte</h3>
+      <h2>Registrarse</h2>
+      <h3>¡Unete ahora y empieza a conocer eventos emocionantes!</h3>
 
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
         <!-- Campo de correo electrónico -->
@@ -97,7 +97,7 @@
 
       <!-- Texto "¿Ya tienes una cuenta? Inicia sesión" -->
       <div class="login-register">
-        ¿Ya tienes una cuenta? <a href="#">Inicia sesión</a>
+        ¿Ya tienes una cuenta? <a href="" routerLink="../login">Inicia sesión</a>
       </div>
     </div>
   </div>
