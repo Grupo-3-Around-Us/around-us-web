@@ -1,1 +1,104 @@
-<p>register works!</p>
+<div class="register-container">
+  <!-- Sección de la imagen -->
+  <div class="image-section-register">
+    <img
+      src="assets/auth-imgs/register-img.png"
+      alt="Imagen de registro"
+      class="background-image-register"
+    />
+  </div>
+
+  <!-- Sección del formulario de registro -->
+  <div class="form-section-register">
+    <div class="header-container-register">
+      <div class="logo-container-register">
+        <span class="logo-text-register">AROUND US</span>
+        <img src="assets/aroundus-logo.png" alt="Logo" class="logo-register" />
+      </div>
+
+      <button class="return-button-register" routerLink="/">
+        Volver al inicio
+      </button>
+    </div>
+    <!-- Formulario de registro -->
+    <div class="register-form-section">
+      <h2>Registro</h2>
+      <h3>¡Bienvenido! Completa los datos para registrarte</h3>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+        <!-- Campo de correo electrónico -->
+        <label for="email-register">Correo electrónico:</label>
+        <input
+          matInput
+          formControlName="email"
+          id="email-register"
+          required
+          placeholder="Introduce tu email"
+        />
+        <p *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
+          Ingresa un correo válido
+        </p>
+
+        <!-- Campo de Nombres -->
+        <label for="firstName-register">Nombres:</label>
+        <input
+          matInput
+          formControlName="firstName"
+          id="firstName-register"
+          required
+          placeholder="Introduce tu nombre"
+        />
+        <p *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched">
+          Este campo es obligatorio
+        </p>
+
+        <!-- Campo de Apellidos -->
+        <label for="lastName-register">Apellidos:</label>
+        <input
+          matInput
+          formControlName="lastName"
+          id="lastName-register"
+          required
+          placeholder="Introduce tus apellidos"
+        />
+        <p *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched">
+          Este campo es obligatorio
+        </p>
+
+        <!-- Campo de contraseña -->
+        <label for="password-register">Contraseña</label>
+        <input
+          formControlName="password"
+          type="password"
+          id="password-register"
+          required
+          placeholder="Introduce tu contraseña"
+        />
+        <p *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+          La contraseña debe tener al menos 6 caracteres
+        </p>
+
+        <!-- Campo de Confirmar contraseña -->
+        <label for="confirmPassword-register">Confirmar contraseña</label>
+        <input
+          formControlName="confirmPassword"
+          type="password"
+          id="confirmPassword-register"
+          required
+          placeholder="Confirma tu contraseña"
+        />
+        <p *ngIf="registerForm.hasError('mismatch') && registerForm.controls['confirmPassword'].touched">
+          Las contraseñas no coinciden
+        </p>
+
+
+        <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+      </form>
+
+      <!-- Texto "¿Ya tienes una cuenta? Inicia sesión" -->
+      <div class="login-register">
+        ¿Ya tienes una cuenta? <a href="#">Inicia sesión</a>
+      </div>
+    </div>
+  </div>
+</div>

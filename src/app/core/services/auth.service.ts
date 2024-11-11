@@ -84,4 +84,22 @@ export class AuthService {
       this._currentUser.password = password;
     }
   }
+
+  registerUser(newUser: User): User | null {
+    // Verifica si ya existe un usuario con el mismo email
+    const existingUser = this.Users.find(user => user.email === newUser.email);
+    if (existingUser) {
+      console.error('El usuario ya existe');
+      return null; // Devuelve null si el usuario ya existe
+    }
+
+    // Agrega el nuevo usuario a la lista y asigna un id único
+    newUser.id = this.Users.length ? Math.max(...this.Users.map(user => user.id)) + 1 : 1;
+    this.Users.push(newUser);
+
+    // Actualiza el usuario autenticado
+    this._currentUser = newUser;
+
+    return newUser;
+  }
 }
