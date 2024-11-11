@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { EventService } from '../../../core/services/event.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Event as CustomEvent } from '../../../shared/models/event.model';
 import { CommonModule } from '@angular/common';
 import { NavbarCustomerComponent } from '../../../shared/components/navbar-customer/navbar-customer.component';
@@ -16,7 +16,7 @@ import { EventCardSearchComponent } from '../../../shared/components/event-card-
 @Component({
   selector: 'app-event-search',
   standalone: true,
-  imports: [FormsModule, MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule, CommonModule, NavbarCustomerComponent, EventCardSearchComponent],
+  imports: [FormsModule, MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule, CommonModule, NavbarCustomerComponent, EventCardSearchComponent, RouterLink],
   templateUrl: './event-search.component.html',
   styleUrls: ['./event-search.component.css']
 })
@@ -57,14 +57,14 @@ export class EventSearchComponent implements OnInit, OnDestroy {
 
   filterEvents(): void {
     const query = this.searchQuery.toLowerCase();
-    if(query !== '' || this.selectedPrice !== 0 && this.selectedCategory !== 'Todos' ) {
+    if(query !== '' || this.selectedCategory !== 'Todos' ) {
       this.filteredEvents = this.events.filter(event => {
         if(this.selectedPrice !== 0 ) {
-          const matchesSearch = event.name.toLowerCase().includes(query) && event.category.name.toLowerCase() === this.selectedCategory.toLowerCase() && event.price >= this.minPrice && event.price <= this.maxPrice;
+          const matchesSearch = event.name.toLowerCase().includes(query) && (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase()) && event.price >= this.minPrice && event.price <= this.maxPrice;
           return matchesSearch;
         }
         else {
-          const matchesSearch = event.name.toLowerCase().includes(query) && event.category.name.toLowerCase() === this.selectedCategory.toLowerCase();
+          const matchesSearch = event.name.toLowerCase().includes(query) && (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase());
           return matchesSearch;
         }
       });

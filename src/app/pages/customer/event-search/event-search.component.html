@@ -27,7 +27,7 @@
       </div>
 
       <div class="filtered-events-content" >
-         <app-event-card-search *ngFor="let event of filteredEvents" [event]="event"></app-event-card-search>
+         <app-event-card-search *ngFor="let event of filteredEvents" [event]="event" [routerLink]="['/customer/events', event.id]"></app-event-card-search>
       </div>
    </div>
 </div>

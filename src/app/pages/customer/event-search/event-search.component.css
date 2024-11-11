@@ -19,6 +19,8 @@
   flex-direction: column;
   gap: 2em;
   padding: 20px;
+  width: 100%;
+  overflow: auto;
 }
 
 body {
@@ -200,4 +202,8 @@ body {
 
 .category-options input[type="radio"]:checked + .circle {
   background-color: #00796b; /* Color cuando está seleccionado */
+}
+
+app-event-card-search {
+  cursor: pointer;
 }
