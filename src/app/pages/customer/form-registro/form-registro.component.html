@@ -1,75 +1,25 @@
+<div class="form-registro-container">
+  <div class="form-registro-container">
+    <h3>{{event?.name}}</h3>
+    <p *ngIf="event?.price===0">Gratis</p>
+    <p *ngIf="event?.price !== 0">{{event?.price}}</p>
+    <img [src]="event?.imageUrl">
+  </div>
+  <div class="form-registro-formulario">
+    <div class="registration-part">
+      <h1>Formulario de registro</h1>
+      <form [formGroup]="formRegisEvent" (ngSubmit)="onSubmit()">
+        <div class="names">
+          <input formControlName="nombre" type="text" placeholder="Nombres" name="nombre" required>
+          <input formControlName="apellidos" type="text" placeholder="Apellidos" name="apellidos" required>
+        </div>
+        <input formControlName="email" type="email" placeholder="Correo electronico" name="email" required>
+        <input formControlName="telefono" type="text" placeholder="Telefono" name="telefono" required>
+      </form>
+    </div>
+    <div class="paymment-part" >
+      <h1>Metodo de pago</h1>
 
-<app-navbar-customer></app-navbar-customer>
-
-<div class="form-Container">
-
-    <div class="header">
-    <div class="logo">
-      AROUND US
     </div>
-    <div class="search-bar">
-      <input placeholder="Buscar eventos" type="text"/>
-      <i class="fas fa-search">
-      </i>
-    </div>
-    <div class="icons">
-      <i class="fas fa-bell"></i>
-      <i class="fas fa-user-circle"></i>
-    </div>
-    </div>
-    <div class="container">
-      <div class="event-card">
-        <img alt="Event poster with text 'BLUEQIX UX DESIGN HACKATHON' and illustrations of people working on a project" height="500" src="https://storage.googleapis.com/a1aa/image/4hcvoQSvKzZEFNueB8o6IXar1gyEegugZOb3bj7HGUFE2AuTA.jpg" width="300"/>
-        <h2> UX Design Hackathon </h2>
-        <p> Gratis</p>
-      </div>
-    <div class="form-container">
-      <h2> Formulario de registro </h2>
-      <input placeholder="Nombres" type="text"/>
-      <input placeholder="Apellidos" type="text"/>
-      <input placeholder="Correo electronico" type="email"/>
-      <input placeholder="Telefono" type="tel"/>
-      <div class="checkbox-group">
-        <div class="label">¿Deseas recibir notificación antes de que empiece el evento?</div>
-        <div class="option">
-          <input type="radio" id="1dia" name="notification">
-          <label for="1dia">1 dia antes</label>
-      </div>
-      <div class="option">
-          <input type="radio" id="2horas" name="notification">
-          <label for="2horas">2 horas antes</label>
-      </div>
-      </div>
-      <div class="payment-method">
-      <h2>
-        Metodo de pago
-      </h2>
-      <div class="icon-input">
-        <i class="fas fa-credit-card">
-        </i>
-        <input placeholder="Numero de tarjeta" type="number"/>
-      </div>
-      <div class="icon-input">
-        <i class="fas fa-calendar-alt">
-        </i>
-        <input placeholder="Fecha de caducidad" type="date"/>
-      </div>
-      <div class="icon-input">
-        <i class="fas fa-lock">
-        </i>
-        <input placeholder="CCV" type="number"/>
-      </div>
-      <div class="icon-input">
-        <i class="fas fa-user">
-        </i>
-        <input placeholder="Nombre completo" type="text"/>
-      </div>
-      </div>
-      <button class="submit-btn">
-      Inscribirse
-      </button>
-    </div>
-    </div>
+  </div>
 </div>
-
-  <app-footer></app-footer>

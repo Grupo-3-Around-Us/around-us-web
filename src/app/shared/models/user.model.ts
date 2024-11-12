@@ -1,3 +1,4 @@
+import { Event } from "./event.model";
 import { UserPreferences } from "./user-preference.model";
 
 export interface User {
@@ -11,4 +12,5 @@ export interface User {
   image: File | null;
   imageURL: string | null;
   userPreferences: UserPreferences;
+  registeredEvents: Event[] | null;
 }
