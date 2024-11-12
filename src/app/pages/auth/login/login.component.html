@@ -57,7 +57,7 @@
 
       <!-- Texto "¿Aún no tienes una cuenta? Regístrate" -->
       <div class="register-login">
-        ¿Aún no tienes una cuenta? <a href="#">Regístrate</a>
+        ¿Aún no tienes una cuenta? <a routerLink="../register">Regístrate</a>
       </div>
 
       <!-- Enlace "¿Olvidaste tu contraseña?" -->
@@ -67,18 +67,3 @@
     </div>
   </div>
 </div>
-
-<!-- Script para mostrar/ocultar la contraseña -->
-<script>
-  function togglePassword() {
-    const passwordInput = document.getElementById("password-login");
-    const passwordIcon = document.querySelector(".password-icon-login");
-    if (passwordInput.type === "password") {
-      passwordInput.type = "text";
-      passwordIcon.textContent = "🙈";
-    } else {
-      passwordInput.type = "password";
-      passwordIcon.textContent = "👁️";
-    }
-  }
-</script>

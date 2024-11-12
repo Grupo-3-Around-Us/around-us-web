@@ -1,4 +1,4 @@
-
+import { UserPreferences } from './../../shared/models/user-preference.model';
 import { Injectable } from '@angular/core';
 import { User } from '../../shared/models/user.model';
 import { LoginCredentials } from '../../shared/models/login-credentials.model';
@@ -69,6 +69,8 @@ export class AuthService {
   }
 
   login(credentials: LoginCredentials): User | null {
+    console.log(this.Users)
+
     const user = this.Users.find(user => user.email === credentials.email && user.password === credentials.password);
     if(user) {
       this._currentUser = user;
@@ -83,5 +85,19 @@ export class AuthService {
     if(this._currentUser){
       this._currentUser.password = password;
     }
+  }
+
+  registerUser(newUser: User): void {
+    // Verifica si ya existe un usuario con el mismo email
+    const existingUser = this.Users.find(user => user.email === newUser.email);
+    if (existingUser) {
+      console.error('El usuario ya existe');
+      return;
+    }
+
+    // Agrega el nuevo usuario a la lista y asigna un id único
+    newUser.id = this.Users.length ? Math.max(...this.Users.map(user => user.id)) + 1 : 1;
+    newUser.username = ''
+    this.Users.push(newUser);
   }
 }
