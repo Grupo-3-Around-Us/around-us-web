@@ -60,8 +60,6 @@ export class LoginComponent {
         this.router.navigate(['customer/home']);
       }
 
-      console.log('Credenciales:', credentials);
-      this.showSnackBar('Inicio de sesion exitoso');
     }
   }
 

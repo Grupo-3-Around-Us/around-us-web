@@ -18,7 +18,6 @@ export class InfoPersonalComponent {
 
   constructor(private userService: UserService, private fb: FormBuilder){
       this.user = this.userService.getCurrentUserInfo();
-      console.log(this.user);
       this.userForm = this.fb.group({
       username: ['', [Validators.required]],
       nombre: ['', [Validators.required]],

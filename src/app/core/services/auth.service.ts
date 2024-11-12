@@ -87,67 +87,17 @@ export class AuthService {
     }
   }
 
-  registerUser(newUser: User): User | null {
+  registerUser(newUser: User): void {
     // Verifica si ya existe un usuario con el mismo email
     const existingUser = this.Users.find(user => user.email === newUser.email);
     if (existingUser) {
       console.error('El usuario ya existe');
-      return null; // Devuelve null si el usuario ya existe
+      return;
     }
 
     // Agrega el nuevo usuario a la lista y asigna un id único
     newUser.id = this.Users.length ? Math.max(...this.Users.map(user => user.id)) + 1 : 1;
     newUser.username = ''
-    console.log(newUser)
     this.Users.push(newUser);
-    const user = this.Users.find(user => user.email === newUser.email && user.password === newUser.password);
-    // Actualiza el usuario autenticado
-    if(user) {
-      this._currentUser = user;
-      return user;
-    }
-
-    return newUser;
-  }
-//borrar
-  timba(firstName: string, lastName: string, email: string, password: string, ): User | null {
-    const username: string = '';
-    const phone: string = '';
-    const image: File | null = null;
-    const imageURL: string | null = null;
-    const userPreferences: UserPreferences = {
-      preference : ['']
-    };
-
-    // Verifica si ya existe un usuario con el mismo email
-    const existingUser = this.Users.find(user => user.email === email);
-    if (existingUser) {
-      console.error('El usuario ya existe');
-      return null; // Devuelve null si el usuario ya existe
-    }
-    // Agrega el nuevo usuario a la lista y asigna un id único
-    const id : number = this.Users.length ? Math.max(...this.Users.map(user => user.id)) + 1 : 1;
-    var nuevousuario: User = {
-      id: id,
-      username: username,
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-      phone: phone,
-      image:image,
-      imageURL: imageURL,
-      userPreferences: userPreferences
-    }
-    console.log(nuevousuario)
-    this.Users.push(nuevousuario);
-    const user = this.Users.find(user => user.email === nuevousuario.email && user.password === nuevousuario.password);
-    // Actualiza el usuario autenticado
-    if(user) {
-      this._currentUser = user;
-      return user;
-    }
-
-    return null;
   }
 }

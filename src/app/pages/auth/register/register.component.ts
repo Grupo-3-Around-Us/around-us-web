@@ -44,11 +44,8 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       const newUser: User = this.registerForm.value;
       // Llamada al servicio para registrar el nuevo usuario
-      const registeredUser = this.authService.timba(this.registerForm.get('firstName')?.value,this.registerForm.get('lastName')?.value,this.registerForm.get('email')?.value,this.registerForm.get('password')?.value);
-      if (registeredUser) {
-        // Si el registro es exitoso, redirige a la página de inicio
-        this.router.navigate(['/customer/home']);
-      }
+      const registeredUser = this.authService.registerUser(newUser);
+      this.router.navigate(['']);
     }
   }
 }
