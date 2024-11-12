@@ -59,12 +59,22 @@ export class EventSearchComponent implements OnInit, OnDestroy {
     const query = this.searchQuery.toLowerCase();
     if(query !== '' || this.selectedCategory !== 'Todos' ) {
       this.filteredEvents = this.events.filter(event => {
-        if(this.selectedPrice !== 0 ) {
-          const matchesSearch = event.name.toLowerCase().includes(query) && (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase()) && event.price >= this.minPrice && event.price <= this.maxPrice;
+        if (this.selectedPrice === 0 && event.price === 0) {
+          const matchesSearch = event.name.toLowerCase().includes(query) &&
+          (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase())
           return matchesSearch;
         }
+
+        else if (this.selectedPrice !== 0 ) {
+          const matchesSearch = event.name.toLowerCase().includes(query) && 
+          (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase()) 
+          && event.price >= this.minPrice && event.price <= this.maxPrice;
+          return matchesSearch;
+        }
+
         else {
-          const matchesSearch = event.name.toLowerCase().includes(query) && (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase());
+          const matchesSearch = event.name.toLowerCase().includes(query) && 
+          (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase());
           return matchesSearch;
         }
       });
@@ -76,7 +86,7 @@ export class EventSearchComponent implements OnInit, OnDestroy {
           return matchesSearch;
         }
         else {
-          return [...this.events ];
+          return event.price === 0;
         }
       });
     }
