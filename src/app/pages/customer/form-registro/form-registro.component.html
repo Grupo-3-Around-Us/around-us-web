@@ -3,7 +3,7 @@
     <h3>{{event?.name}}</h3>
     <p *ngIf="event?.price===0">Gratis</p>
     <p *ngIf="event?.price !== 0">{{event?.price}}</p>
-    <img [src]="event?.imageUrl">
+    <img [src]="event?.imageUrl" alt=".">
   </div>
   <div class="form-registro-formulario">
     <div class="registration-part">
@@ -19,7 +19,14 @@
     </div>
     <div class="paymment-part" >
       <h1>Metodo de pago</h1>
-
+      <form [formGroup]= "formRegisEvent" (ngSumit)="onSubmit()">
+        <div class="Paycard">
+          <input formControlName="paycard" type="text" name="Numero de tarjeta" placeholder="Numero de tarjeta" required>
+          <input formControlName="FechaDeCaducidad" type="date" name="Fecha de caducidad" placeholder="Fecha de caducidad" required>
+          <input formControlName="CVV" type="text" name="CVV" placeholder="CVV" required>
+          <input formControlName="NombreCompleto" type="text" name="Nombre completo" placeholder="Nombre completo" required>
+        </div>
+      </form>
     </div>
   </div>
 </div>
