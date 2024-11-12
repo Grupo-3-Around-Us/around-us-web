@@ -3,7 +3,7 @@
     <h3>{{event?.name}}</h3>
     <p *ngIf="event?.price===0">Gratis</p>
     <p *ngIf="event?.price !== 0">{{event?.price}}</p>
-    <img [src]="event?.imageUrl">
+    <img [src]="event?.imageUrl" alt=".">
   </div>
   <div class="form-registro-formulario">
     <div class="registration-part">
