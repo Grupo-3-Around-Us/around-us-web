@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SearchService } from '../../../core/services/search.service';
+import { RegisterService } from '../../../core/services/registered-events.service';
 
 @Component({
   selector: 'app-navbar-customer',
@@ -14,8 +15,9 @@ import { SearchService } from '../../../core/services/search.service';
 export class NavbarCustomerComponent {
   showProfileOptions = false;
   searchQuery: string = '';
+  regisModal: boolean = true;
 
-  constructor(private searchService: SearchService) {}
+  constructor(private searchService: SearchService, private registerService: RegisterService) {}
 
   toggleNotificationMenu() {
     this.showProfileOptions = !this.showProfileOptions;
@@ -24,5 +26,10 @@ export class NavbarCustomerComponent {
   onSearchQueryChange(event: Event) {
     const query = (event.target as HTMLInputElement).value;
     this.searchService.setSearchQuery(query);
+  }
+
+  openEventRegistradoModal() {
+    this.registerService.triggerOpenModal(true);
+
   }
 }

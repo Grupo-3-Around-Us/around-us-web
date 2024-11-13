@@ -17,7 +17,7 @@
       </div>
 
       <div class="event-regis-button">
-        <a  class="register-button"  *ngIf="event?.isOpen" style="background-color: #16A34A;" [routerLink]="['form-registro', event?.id]" >Quiero Asistir</a>
+        <a  class="register-button"  *ngIf="event?.isOpen" style="background-color: #16A34A;" [routerLink]="['../../form-registro', event?.id]" >Quiero Asistir</a>
         <a class="register-button" *ngIf="!event?.isOpen" style="background-color: #EF4444;">Inscripciones Cerradas</a>
       </div>
     </div>
@@ -48,7 +48,7 @@
   </div>
   <div class="event-detail-more">
     <div class="event-regis-button-more">
-      <a  class="register-button"  *ngIf="event?.isOpen" style="background-color: #16A34A;" [routerLink]="['form-registro', event?.id]" >Quiero Asistir</a>
+      <a  class="register-button"  *ngIf="event?.isOpen" style="background-color: #16A34A;" [routerLink]="['../../form-registro', event?.id]" >Quiero Asistir</a>
       <a class="register-button" *ngIf="!event?.isOpen" style="background-color: #EF4444;">Inscripciones Cerradas</a>
     </div>
     <div class="event-more-information">

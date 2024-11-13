@@ -1,75 +1,47 @@
+<div class="form-registro-container">
+  <div class="form-registro-container">
+    <h3>{{event?.name}}</h3>
+    <p *ngIf="event?.price===0">Gratis</p>
+    <p *ngIf="event?.price !== 0">{{event?.price | currency}}</p>
+    <img [src]="event?.imageUrl" alt=".">
+  </div>
 
-<app-navbar-customer></app-navbar-customer>
+  <div class="form-registro-formulario">
+    <form [formGroup]="formRegistro" (ngSubmit)="onSubmit()">
 
-<div class="form-Container">
+      <!--formulario de registro general-->
+      <div class="registration-part">
+        <h1>Formulario de registro</h1>
 
-    <div class="header">
-    <div class="logo">
-      AROUND US
-    </div>
-    <div class="search-bar">
-      <input placeholder="Buscar eventos" type="text"/>
-      <i class="fas fa-search">
-      </i>
-    </div>
-    <div class="icons">
-      <i class="fas fa-bell"></i>
-      <i class="fas fa-user-circle"></i>
-    </div>
-    </div>
-    <div class="container">
-      <div class="event-card">
-        <img alt="Event poster with text 'BLUEQIX UX DESIGN HACKATHON' and illustrations of people working on a project" height="500" src="https://storage.googleapis.com/a1aa/image/4hcvoQSvKzZEFNueB8o6IXar1gyEegugZOb3bj7HGUFE2AuTA.jpg" width="300"/>
-        <h2> UX Design Hackathon </h2>
-        <p> Gratis</p>
+          <!--datos personales-->
+          <div class="names">
+            <input formControlName="nombre" type="text" placeholder="Nombres" name="nombre" required>
+            <input formControlName="apellidos" type="text" placeholder="Apellidos" name="apellidos" required>
+          </div>
+          <input formControlName="email" type="email" placeholder="Correo electrónico" name="email" required>
+          <input formControlName="telefono" type="text" placeholder="Teléfono" name="teléfono" required>
       </div>
-    <div class="form-container">
-      <h2> Formulario de registro </h2>
-      <input placeholder="Nombres" type="text"/>
-      <input placeholder="Apellidos" type="text"/>
-      <input placeholder="Correo electronico" type="email"/>
-      <input placeholder="Telefono" type="tel"/>
-      <div class="checkbox-group">
-        <div class="label">¿Deseas recibir notificación antes de que empiece el evento?</div>
-        <div class="option">
-          <input type="radio" id="1dia" name="notification">
-          <label for="1dia">1 dia antes</label>
+
+      <!--metodo de pago-->
+      <div *ngIf="event?.price !== 0" class="paymment-part">
+        <h1>Método de pago</h1>
+
+        <!--tarjeta de credito-->
+        <div class="Paycard">
+          <input formControlName="numeroTarjeta" type="text" name="Número de tarjeta" placeholder="Número de tarjeta" required>
+          <input formControlName="fechaCaducidad" type="date" name="Fecha de caducidad" placeholder="Fecha de caducidad" required>
+          <input formControlName="cvv" type="text" name="CVV" placeholder="CVV" required>
+          <input formControlName="nombreCompleto" type="text" name="Nombre Completo" placeholder="Nombre Completo" required>
+        </div>
+
       </div>
-      <div class="option">
-          <input type="radio" id="2horas" name="notification">
-          <label for="2horas">2 horas antes</label>
+
+      <!--boton de inscripcion-->
+      <div class="botoncito-inscribirse">
+        <button type="submit"
+          [disabled]="isButtonDisabled()"
+          [class.disabled]="isButtonDisabled()">Inscribirse</button>
       </div>
-      </div>
-      <div class="payment-method">
-      <h2>
-        Metodo de pago
-      </h2>
-      <div class="icon-input">
-        <i class="fas fa-credit-card">
-        </i>
-        <input placeholder="Numero de tarjeta" type="number"/>
-      </div>
-      <div class="icon-input">
-        <i class="fas fa-calendar-alt">
-        </i>
-        <input placeholder="Fecha de caducidad" type="date"/>
-      </div>
-      <div class="icon-input">
-        <i class="fas fa-lock">
-        </i>
-        <input placeholder="CCV" type="number"/>
-      </div>
-      <div class="icon-input">
-        <i class="fas fa-user">
-        </i>
-        <input placeholder="Nombre completo" type="text"/>
-      </div>
-      </div>
-      <button class="submit-btn">
-      Inscribirse
-      </button>
-    </div>
-    </div>
+    </form>
+  </div>
 </div>
-
-  <app-footer></app-footer>
