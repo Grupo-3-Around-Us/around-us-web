@@ -19,7 +19,13 @@
             <input formControlName="apellidos" type="text" placeholder="Apellidos" name="apellidos" required>
           </div>
           <input formControlName="email" type="email" placeholder="Correo electrónico" name="email" required>
+          <p *ngIf="formRegistro.controls['email'].invalid && formRegistro.controls['email'].touched">
+            Ingresa un correo válido
+          </p>
           <input formControlName="telefono" type="text" placeholder="Teléfono" name="teléfono" required>
+          <p *ngIf="formRegistro.controls['telefono'].invalid && formRegistro.controls['telefono'].touched">
+            Requiere de 9 numeros
+          </p>
       </div>
 
       <!--metodo de pago-->
@@ -29,8 +35,17 @@
         <!--tarjeta de credito-->
         <div class="Paycard">
           <input formControlName="numeroTarjeta" type="text" name="Número de tarjeta" placeholder="Número de tarjeta" required>
+          <p *ngIf="formRegistro.controls['numeroTarjeta'].invalid && formRegistro.controls['numeroTarjeta'].touched">
+            Requiere de 16 numeros
+          </p>
           <input formControlName="fechaCaducidad" type="date" name="Fecha de caducidad" placeholder="Fecha de caducidad" required>
+          <p *ngIf="formRegistro.controls['fechaCaducidad'].invalid && formRegistro.controls['fechaCaducidad'].touched">
+            Ingresa una fecha válida
+          </p>
           <input formControlName="cvv" type="text" name="CVV" placeholder="CVV" required>
+          <p *ngIf="formRegistro.controls['cvv'].invalid && formRegistro.controls['cvv'].touched">
+            Ingresa un CVV válido
+          </p>
           <input formControlName="nombreCompleto" type="text" name="Nombre Completo" placeholder="Nombre Completo" required>
         </div>
 

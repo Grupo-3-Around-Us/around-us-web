@@ -152,3 +152,10 @@ button{
     margin-bottom: 20px;
   }
 }
+
+.registration-part p,
+.paymment-part p{
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+}
