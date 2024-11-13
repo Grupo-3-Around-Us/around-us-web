@@ -1,3 +1,4 @@
+import { EventCardSearchComponent } from './../../../shared/components/event-card-search/event-card-search.component';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +10,7 @@ import { RegisterService } from '../../../core/services/registered-events.servic
 @Component({
   selector: 'app-event-registrado',
   standalone: true,
-  imports: [NavbarCustomerComponent, CommonModule, FormsModule],
+  imports: [NavbarCustomerComponent, CommonModule, FormsModule, EventCardSearchComponent],
   templateUrl: './event-registrado.component.html',
   styleUrls: ['./event-registrado.component.css']
 })
@@ -25,18 +26,12 @@ export class EventRegistradoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.registerService.openModal$.subscribe(() => {
-      this.openModal();
+    this.registerService.openModal$.subscribe( modal => {
+      this.isRegisteredEvents = modal;
     });
   }
 
-  openModal() {
-    this.isRegisteredEvents = true;
-    document.body.classList.add('modal-open');
-  }
-
   closeModal() {
-    this.isRegisteredEvents = false;
-    document.body.classList.remove('modal-open');
+    this.registerService.triggerOpenModal(false);
   }
 }

@@ -1,3 +1,4 @@
+import { UserService } from './../../../core/services/user.service';
 import { CommonModule } from '@angular/common';
 import { Event } from './../../models/event.model';
 import { Component, Input } from '@angular/core';
@@ -12,5 +13,9 @@ import { Component, Input } from '@angular/core';
 export class EventCardSearchComponent {
 
   @Input() event: Event = {} as Event;
-
+  @Input() registered: boolean = false;
+  constructor(private userService:UserService){}
+  unRegister(){
+    this.userService.unRegisterEvent(this.event);
+  }
 }

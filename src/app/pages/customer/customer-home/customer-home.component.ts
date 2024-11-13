@@ -4,12 +4,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router'; // Importa RouterModule
 import { Event } from '../../../shared/models/event.model'; // Usamos 'type' para la importación de la interfaz
 import { EventService } from '../../../core/services/event.service';
+import { EventRegistradoComponent } from '../event-registrado/event-registrado.component';
 
 
 @Component({
   selector: 'app-customer-home',
   standalone: true,
-  imports: [RouterModule, CommonModule, EventCard1Component], // Agrega RouterModule aquí
+  imports: [RouterModule, CommonModule, EventCard1Component, EventRegistradoComponent], // Agrega RouterModule aquí
   templateUrl: './customer-home.component.html',
   styleUrls:['./customer-home.component.css']
 })

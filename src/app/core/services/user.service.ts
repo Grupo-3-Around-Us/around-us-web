@@ -1,5 +1,8 @@
+import { App } from './../../../../node_modules/open/index.d';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
+import { Event as AppEvent } from '../../shared/models/event.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +46,9 @@ export class UserService {
 
   getPreferences() {
     return this.authService.getCurrentUser()?.userPreferences;
+  }
+
+  unRegisterEvent(event: AppEvent){
+    this.authService.unRegisterEvent(event);
   }
 }

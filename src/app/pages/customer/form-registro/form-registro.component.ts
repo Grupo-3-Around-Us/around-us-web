@@ -81,8 +81,6 @@ export class FormRegistroComponent {
     if (this.formRegistro.valid) {
       if (this.event) {
         this.currUser?.registeredEvents?.push(this.event);
-        console.log (this.currUser);
-        console.log (this.event);
         this.router.navigate(['customer/home']);
       }
     }

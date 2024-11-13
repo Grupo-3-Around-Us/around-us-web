@@ -1,1 +1,9 @@
-<p>event-registrado works!</p>
+<div class="modal-container" *ngIf="isRegisteredEvents">
+  <div class="modal-header">
+    <div class="event-pref-return-button" (click)="closeModal()"><i class="fa-solid fa-arrow-left"></i><span> Regresar</span></div>
+    <div class="eventos-registrados">
+      <app-event-card-search *ngFor="let event of eventsRegistrados" [event]="event" [registered]="true">
+      </app-event-card-search>
+    </div>
+  </div>
+</div>

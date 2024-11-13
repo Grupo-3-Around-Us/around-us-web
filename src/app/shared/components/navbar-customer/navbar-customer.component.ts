@@ -15,6 +15,7 @@ import { RegisterService } from '../../../core/services/registered-events.servic
 export class NavbarCustomerComponent {
   showProfileOptions = false;
   searchQuery: string = '';
+  regisModal: boolean = true;
 
   constructor(private searchService: SearchService, private registerService: RegisterService) {}
 
@@ -28,8 +29,7 @@ export class NavbarCustomerComponent {
   }
 
   openEventRegistradoModal() {
-    console.log("Botón 'Mis Registros' presionado");
-    this.registerService.triggerOpenModal();
+    this.registerService.triggerOpenModal(true);
+
   }
-  
 }

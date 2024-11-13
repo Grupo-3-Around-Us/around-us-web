@@ -1,3 +1,5 @@
+import { App } from './../../../../node_modules/open/index.d';
+import { Event as AppEvent } from './../../shared/models/event.model';
 import { UserPreferences } from './../../shared/models/user-preference.model';
 import { Injectable } from '@angular/core';
 import { User } from '../../shared/models/user.model';
@@ -101,5 +103,18 @@ export class AuthService {
     newUser.id = this.Users.length ? Math.max(...this.Users.map(user => user.id)) + 1 : 1;
     newUser.username = ''
     this.Users.push(newUser);
+  }
+  unRegisterEvent(event: AppEvent) {
+    // Verifica si el usuario actual y su lista de eventos registrados existen
+    if (this._currentUser?.registeredEvents) {
+      // Encuentra el índice del evento en el arreglo registeredEvents
+      const index = this._currentUser.registeredEvents.findIndex(
+        (regis) => regis.id === event.id
+      );
+      // Si se encuentra el evento, elimínalo usando splice
+      if (index !== -1) {
+        this._currentUser.registeredEvents.splice(index, 1);
+      }
+    }
   }
 }

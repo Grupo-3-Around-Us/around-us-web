@@ -28,3 +28,21 @@
   color: #4a4a4a;
   margin: 0;
 }
+
+.CancelButton{
+  background-color: #EF4444;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+.CancelButton:hover{
+  background-color: #bf1515d3;
+}
+
+.FechaPrecioBoton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
