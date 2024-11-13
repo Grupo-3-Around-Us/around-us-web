@@ -12,5 +12,5 @@ export interface User {
   image: File | null;
   imageURL: string | null;
   userPreferences: UserPreferences;
-  registeredEvents: Event[] | null;
+  registeredEvents: Event[];
 }

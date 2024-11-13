@@ -1,5 +1,5 @@
 import { App } from './../../../../node_modules/open/index.d';
-import { Event as AppEvent } from './../../shared/models/event.model';
+import { Event as AppEvent, Event } from './../../shared/models/event.model';
 import { UserPreferences } from './../../shared/models/user-preference.model';
 import { Injectable } from '@angular/core';
 import { User } from '../../shared/models/user.model';
@@ -102,6 +102,7 @@ export class AuthService {
     // Agrega el nuevo usuario a la lista y asigna un id único
     newUser.id = this.Users.length ? Math.max(...this.Users.map(user => user.id)) + 1 : 1;
     newUser.username = ''
+    newUser.registeredEvents = [] as Event[]
     this.Users.push(newUser);
   }
   unRegisterEvent(event: AppEvent) {

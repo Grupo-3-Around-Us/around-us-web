@@ -80,10 +80,9 @@ export class FormRegistroComponent {
   onSubmit(): void {
     if (this.formRegistro.valid) {
       if (this.event) {
-        this.currUser?.registeredEvents?.push(this.event);
+        this.currUser?.registeredEvents.push(this.event);
         this.router.navigate(['customer/home']);
       }
     }
   }
-
 }
