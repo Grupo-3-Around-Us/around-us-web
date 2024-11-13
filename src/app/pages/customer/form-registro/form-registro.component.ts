@@ -1,9 +1,10 @@
+import { routes } from './../../../app.routes';
 import { Event } from './../../../shared/models/event.model';
 import { EventService } from './../../../core/services/event.service';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavbarCustomerComponent } from '../../../shared/components/navbar-customer/navbar-customer.component';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
-import { ActivatedRoute, ChildrenOutletContexts, RouterLink } from '@angular/router';
+import { ActivatedRoute, ChildrenOutletContexts, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../../../shared/models/user.model';
@@ -20,6 +21,7 @@ export class FormRegistroComponent {
   event: Event | null = {} as Event;
   formRegistro: FormGroup;
   currUser: User | null;
+  router = inject (Router);
 
   constructor(private route: ActivatedRoute, private eventService: EventService, private fb: FormBuilder, authService: AuthService) {
     this.formRegistro = this.fb.group({
@@ -33,7 +35,7 @@ export class FormRegistroComponent {
     cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]],
     nombreCompleto: ['', [Validators.required]],
     });
-      
+
     this.currUser = authService.getCurrentUser();
   }
 
@@ -46,7 +48,7 @@ export class FormRegistroComponent {
         this.formRegistro.get('email')?.valid &&
         this.formRegistro.get('telefono')?.valid
       );
-    } 
+    }
     else {
       //para el de pago se evaluan toditos
       return this.formRegistro.invalid;
@@ -56,15 +58,15 @@ export class FormRegistroComponent {
   ngOnInit(): void {
     const eventId = Number(this.route.snapshot.paramMap.get('id'));
     this.event = this.eventService.getEventById(eventId);
-  
+
     if (this.event?.price === 0) {
       //se deshabilitan los campos de pago para eventos gratuitos
       this.formRegistro.get('numeroTarjeta')?.disable();
       this.formRegistro.get('fechaCaducidad')?.disable();
       this.formRegistro.get('cvv')?.disable();
       this.formRegistro.get('nombreCompleto')?.disable();
-    } 
-    
+    }
+
     else {
       //aqui se habilitan los campos de pago para eventos de pago
       this.formRegistro.get('numeroTarjeta')?.enable();
@@ -73,14 +75,17 @@ export class FormRegistroComponent {
       this.formRegistro.get('nombreCompleto')?.enable();
     }
   }
-  
+
 
   onSubmit(): void {
     if (this.formRegistro.valid) {
       if (this.event) {
         this.currUser?.registeredEvents?.push(this.event);
+        console.log (this.currUser);
+        console.log (this.event);
+        this.router.navigate(['customer/home']);
       }
     }
   }
-  
+
 }
