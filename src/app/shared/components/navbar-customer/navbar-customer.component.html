@@ -29,7 +29,7 @@
       <i class="fa-solid fa-user-circle fs-2 profile-icon" (click)="toggleNotificationMenu()"></i>
       <div *ngIf="showProfileOptions" class="profile-menu">
         <a class="profile-option" routerLink="micuenta/informacion-personal" (click)="toggleNotificationMenu()">Mi Cuenta</a>
-        <a class="profile-option">Mis Registros</a>
+        <a class="profile-option" (click)="openEventRegistradoModal()">Mis Registros</a>
         <a class="profile-option" routerLink="config/security" (click)="toggleNotificationMenu()">Configuración</a>
         <a routerLink="" class="profile-option">Cerrar Sesión</a>
       </div>
