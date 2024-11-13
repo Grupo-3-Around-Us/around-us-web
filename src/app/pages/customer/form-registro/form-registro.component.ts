@@ -18,36 +18,69 @@ import { AuthService } from '../../../core/services/auth.service';
 })
 export class FormRegistroComponent {
   event: Event | null = {} as Event;
-  formRegisEvent: FormGroup;
+  formRegistro: FormGroup;
   currUser: User | null;
-  formPayment: FormGroup;
 
   constructor(private route: ActivatedRoute, private eventService: EventService, private fb: FormBuilder, authService: AuthService) {
-    this.formRegisEvent = this.fb.group({
+    this.formRegistro = this.fb.group({
     nombre: ['', [Validators.required]],
     apellidos: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
-    telefono: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(10)]],
-    })
-    this.formPayment = this.fb.group({
-      numeroTarjeta: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]],
-      fechaCaducidad: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
-      ccv: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
-      nombreCompleto: ['', [Validators.required]],
-    })
+    telefono: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
+
+    numeroTarjeta: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(18)]],
+    fechaCaducidad: ['', [Validators.required]],
+    cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]],
+    nombreCompleto: ['', [Validators.required]],
+    });
+      
     this.currUser = authService.getCurrentUser();
+  }
+
+  isButtonDisabled(): boolean {
+    if (this.event?.price === 0) {
+      //para el evento gratuito se validan solo los campos de registro
+      return ! (
+        this.formRegistro.get('nombre')?.valid &&
+        this.formRegistro.get('apellidos')?.valid &&
+        this.formRegistro.get('email')?.valid &&
+        this.formRegistro.get('telefono')?.valid
+      );
+    } 
+    else {
+      //para el de pago se evaluan toditos
+      return this.formRegistro.invalid;
+    }
   }
 
   ngOnInit(): void {
     const eventId = Number(this.route.snapshot.paramMap.get('id'));
     this.event = this.eventService.getEventById(eventId);
+  
+    if (this.event?.price === 0) {
+      //se deshabilitan los campos de pago para eventos gratuitos
+      this.formRegistro.get('numeroTarjeta')?.disable();
+      this.formRegistro.get('fechaCaducidad')?.disable();
+      this.formRegistro.get('cvv')?.disable();
+      this.formRegistro.get('nombreCompleto')?.disable();
+    } 
+    
+    else {
+      //aqui se habilitan los campos de pago para eventos de pago
+      this.formRegistro.get('numeroTarjeta')?.enable();
+      this.formRegistro.get('fechaCaducidad')?.enable();
+      this.formRegistro.get('cvv')?.enable();
+      this.formRegistro.get('nombreCompleto')?.enable();
+    }
   }
+  
 
   onSubmit(): void {
-    if (this.formRegisEvent.valid) {
+    if (this.formRegistro.valid) {
       if (this.event) {
         this.currUser?.registeredEvents?.push(this.event);
       }
     }
   }
+  
 }
