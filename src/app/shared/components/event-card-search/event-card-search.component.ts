@@ -10,7 +10,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './event-card-search.component.css'
 })
 export class EventCardSearchComponent {
-
   @Input() event: Event = {} as Event;
 
 }

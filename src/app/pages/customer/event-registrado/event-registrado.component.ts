@@ -5,17 +5,20 @@ import { NavbarCustomerComponent } from '../../../shared/components/navbar-custo
 import { AuthService } from '../../../core/services/auth.service';
 import { Event } from '../../../shared/models/event.model';
 import { RegisterService } from '../../../core/services/registered-events.service';
+import { RouterModule } from '@angular/router';
+import { EventCardSearchComponent } from '../../../shared/components/event-card-search/event-card-search.component';
 
 @Component({
   selector: 'app-event-registrado',
   standalone: true,
-  imports: [NavbarCustomerComponent, CommonModule, FormsModule],
+  imports: [NavbarCustomerComponent, CommonModule, FormsModule, RouterModule, EventCardSearchComponent],
   templateUrl: './event-registrado.component.html',
   styleUrls: ['./event-registrado.component.css']
 })
+
 export class EventRegistradoComponent implements OnInit {
   isRegisteredEvents = false;
-  eventsRegistrados: Event[] = []; // Array para almacenar los eventos registrados
+  eventsRegistrados: Event[] = []; // Para almacenar los eventos registrados
 
   constructor(private authService: AuthService, private registerService: RegisterService) {
     const currentUser = this.authService.getCurrentUser();

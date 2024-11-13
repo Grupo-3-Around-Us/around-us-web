@@ -1,1 +1,7 @@
-<p>event-registrado works!</p>
+<div class="filtered-events-content">
+    <app-event-card-search 
+      *ngFor="let event of eventsRegistrados"
+      [event]="event" 
+      [routerLink]="['/customer/events', event.id]">
+    </app-event-card-search>
+</div>
