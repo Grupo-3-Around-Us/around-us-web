@@ -2,31 +2,46 @@
   <div class="form-registro-container">
     <h3>{{event?.name}}</h3>
     <p *ngIf="event?.price===0">Gratis</p>
-    <p *ngIf="event?.price !== 0">{{event?.price}}</p>
+    <p *ngIf="event?.price !== 0">{{event?.price | currency}}</p>
     <img [src]="event?.imageUrl" alt=".">
   </div>
+
   <div class="form-registro-formulario">
-    <div class="registration-part">
-      <h1>Formulario de registro</h1>
-      <form [formGroup]="formRegisEvent" (ngSubmit)="onSubmit()">
-        <div class="names">
-          <input formControlName="nombre" type="text" placeholder="Nombres" name="nombre" required>
-          <input formControlName="apellidos" type="text" placeholder="Apellidos" name="apellidos" required>
-        </div>
-        <input formControlName="email" type="email" placeholder="Correo electronico" name="email" required>
-        <input formControlName="telefono" type="text" placeholder="Telefono" name="telefono" required>
-      </form>
-    </div>
-    <div class="paymment-part" >
-      <h1>Metodo de pago</h1>
-      <form [formGroup]= "formRegisEvent" (ngSumit)="onSubmit()">
+    <form [formGroup]="formRegistro" (ngSubmit)="onSubmit()">
+    
+      <!--formulario de registro general-->
+      <div class="registration-part">
+        <h1>Formulario de registro</h1>
+        
+          <!--datos personales-->
+          <div class="names">
+            <input formControlName="nombre" type="text" placeholder="Nombres" name="nombre" required>
+            <input formControlName="apellidos" type="text" placeholder="Apellidos" name="apellidos" required>
+          </div>
+          <input formControlName="email" type="email" placeholder="Correo electrónico" name="email" required>
+          <input formControlName="telefono" type="text" placeholder="Teléfono" name="teléfono" required>
+      </div>
+  
+      <!--metodo de pago-->
+      <div *ngIf="event?.price !== 0" class="paymment-part">
+        <h1>Método de pago</h1>
+        
+        <!--tarjeta de credito-->
         <div class="Paycard">
-          <input formControlName="paycard" type="text" name="Numero de tarjeta" placeholder="Numero de tarjeta" required>
-          <input formControlName="FechaDeCaducidad" type="date" name="Fecha de caducidad" placeholder="Fecha de caducidad" required>
-          <input formControlName="CVV" type="text" name="CVV" placeholder="CVV" required>
-          <input formControlName="NombreCompleto" type="text" name="Nombre completo" placeholder="Nombre completo" required>
+          <input formControlName="numeroTarjeta" type="text" name="Número de tarjeta" placeholder="Número de tarjeta" required>
+          <input formControlName="fechaCaducidad" type="date" name="Fecha de caducidad" placeholder="Fecha de caducidad" required>
+          <input formControlName="cvv" type="text" name="CVV" placeholder="CVV" required>
+          <input formControlName="nombreCompleto" type="text" name="Nombre Completo" placeholder="Nombre Completo" required>
         </div>
-      </form>
-    </div>
+  
+      </div>
+
+      <!--boton de inscripcion-->
+      <div class="botoncito-inscribirse">
+        <button type="submit" [disabled]="isButtonDisabled()"
+        [class.disabled]="isButtonDisabled()">Inscribirse</button>
+      </div>
+
+    </form>
   </div>
 </div>
