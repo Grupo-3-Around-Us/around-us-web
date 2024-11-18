@@ -48,7 +48,6 @@ a:visited {
   }
 }
 
-
 .navbar-micu-buttons {
   display: flex;
   flex-direction: column;
@@ -75,4 +74,29 @@ a:visited {
 .active-button {
   transition: background-color 0.3s;
   background-color: #95BCCB;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .navbar-micu-container {
+    padding: 20px;
+  }
+
+  .navbar-micu-user-card {
+    padding: 0.5em 1em;
+  }
+
+  .navbar-micu-info {
+    h6 {
+      font-size: 0.7em;
+    }
+
+    p {
+      font-size: 0.8em;
+    }
+  }
+
+  .navbar-buttons {
+    padding: 0.8em 1.5em;
+  }
 }
