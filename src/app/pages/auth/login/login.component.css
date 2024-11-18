@@ -217,3 +217,22 @@
   color: blue;
   text-decoration: none;
 }
+
+
+@media (width <= 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .image-section-login {
+    display: none;
+  }
+
+  .form-section-login {
+    padding: 20px;
+  }
+
+  .login-form-section {
+    max-width: 100%;
+  }
+}

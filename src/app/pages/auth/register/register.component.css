@@ -151,3 +151,18 @@
 .login-register a:hover {
   text-decoration: none;
 }
+
+
+@media (max-width: 900px) {
+  .register-container {
+    flex-direction: column;
+  }
+
+  .image-section-register {
+    display: none;
+  }
+
+  .form-section-register {
+    padding: 20px;
+  }
+}
