@@ -1,3 +1,7 @@
+:host {
+  height: 100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -75,4 +79,15 @@ a:visited {
 .active-button {
   transition: background-color 0.3s;
   background-color: #95BCCB;
+}
+
+@media (max-width: 1025px) {
+  :host {
+    height: auto;
+  }
+
+  .navbar-micu-container {
+    height: 100%;
+  }
+
 }

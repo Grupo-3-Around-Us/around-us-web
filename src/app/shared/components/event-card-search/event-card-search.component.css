@@ -5,7 +5,7 @@
   justify-content: space-between;
   padding: 1.3em 2.6em;
   border-radius: 1.4em;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .event-card-search-image {
@@ -45,4 +45,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  .event-card-search-container {
+    flex-direction: column;
+    padding: 1.3em 1.3em;
+  }
+
+  .event-card-search-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .event-card-search-info {
+    width: 100%;
+  }
+
+  .event-card-search-info h3 {
+    font-size: 1.8em;
+  }
 }

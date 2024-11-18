@@ -19,6 +19,7 @@ export class NavbarCustomerComponent {
 
   constructor(private searchService: SearchService, private registerService: RegisterService) {}
 
+
   toggleNotificationMenu() {
     this.showProfileOptions = !this.showProfileOptions;
   }
