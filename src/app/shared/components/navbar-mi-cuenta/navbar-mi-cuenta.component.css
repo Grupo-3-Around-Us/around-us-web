@@ -1,5 +1,7 @@
 :host {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 
 a {
@@ -11,9 +13,10 @@ a:visited {
 }
 
 .navbar-micu-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   padding: 38px 30px;
   gap: 1em;
   background-color: #5AD8FB20;
@@ -76,18 +79,97 @@ a:visited {
   }
 }
 
-.active-button {
-  transition: background-color 0.3s;
-  background-color: #95BCCB;
+.navbar-buttons {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 1em 2em;
+  border-radius: 1.2em;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
 }
 
-@media (max-width: 1025px) {
-  :host {
-    height: auto;
+.navbar-buttons span {
+  font-weight: 550;
+}
+
+.navbar-buttons i {
+  font-size: 18px;
+}
+
+
+/* Mostrar el menú cuando está activo */
+.navbar-micu-container.active {
+  left: 0; /* Desliza el menú hacia la vista */
+}
+
+/* Botón de menú */
+.menu-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Superposición para cerrar el menú */
+
+
+/* Estilos para los botones del menú */
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-buttons:hover {
+  background-color: #f5f5f5;
+}
+
+.menu-toggle-btn {
+  display: none;
+}
+
+/* Ocultar el botón de menú y mostrar el menú permanentemente en pantallas grandes */
+@media (width <= 770px) {
+  .menu-toggle-btn {
+    display: block;
   }
 
   .navbar-micu-container {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
     height: 100%;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
   }
 
+  .button-container {
+    background-color: #5AD8FB20;
+    padding: 1em 2em;
+    border-radius: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+
+  }
+
+  :host {
+    background-color: #fff;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
 }

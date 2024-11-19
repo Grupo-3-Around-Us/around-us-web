@@ -12,7 +12,18 @@ import { RouterLink, RouterModule } from '@angular/router';
 })
 export class NavbarMiCuentaComponent {
   user: any;
+  isMenuActive: boolean = false;
+
   constructor(private userService: UserService) {
     this.user = this.userService.getCurrentUserInfo();
+  }
+
+
+  toggleMenu(): void {
+    this.isMenuActive = !this.isMenuActive;
+  }
+
+  closeMenu(): void {
+    this.isMenuActive = false;
   }
 }

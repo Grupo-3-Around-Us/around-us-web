@@ -211,7 +211,7 @@ a {
   }
 }
 
-@media (width <= 600px) {
+@media (width <= 768px) {
   .event-detail-more {
     flex-direction: column;
     gap: 2em;
@@ -221,11 +221,31 @@ a {
     }
   }
 
+  .event-especifications {
+    padding: 0.5em 1em;
+
+    h2 {
+      font-size: 1.7em;
+    }
+
+    p {
+      font-size: 1.1em;
+    }
+
+    li {
+      font-size: 1.1em;
+    }
+  }
+
   .event-card-description {
     padding: 1.5em 2em;
 
     h1 {
       font-size: 2.4em;
     }
+  }
+
+  .event-regis-button-more, .event-more-information {
+    scale: 0.8;
   }
 }

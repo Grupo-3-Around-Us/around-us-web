@@ -60,12 +60,16 @@
 
 /*---------------------------------------------------------------Descubrir---------------------------------------------------------------*/
 .discover-section {
-  margin-top: 2rem;
-  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .discover-section h2 {
   padding: 0 1em;
+  align-self: flex-start;
   font-size: 2.5em;
   color: #141516;
   margin-bottom: 2rem;
@@ -98,5 +102,11 @@ app-footer {
 
   .banner-image {
     object-fit: cover;
+  }
+
+  .event-section, .discover-section {
+    h2 {
+      font-size: 1.5em;
+    }
   }
 }

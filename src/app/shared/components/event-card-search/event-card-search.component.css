@@ -47,10 +47,21 @@
   align-items: center;
 }
 
+.event-card-mod {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
+
 @media (max-width: 900px) {
   .event-card-search-container {
     flex-direction: column;
     padding: 1.3em 1.3em;
+    gap: 0.5em;
   }
 
   .event-card-search-image {
@@ -60,9 +71,40 @@
 
   .event-card-search-info {
     width: 100%;
+    gap: 0.5em;
+
+  }
+
+  .modal-header {
+    gap: 1em;
   }
 
   .event-card-search-info h3 {
-    font-size: 1.8em;
+    font-size: 1.3em;
+  }
+
+  .event-card-mod, .event-card-date, .event-card-price {
+    font-size: 0.8em;
+  }
+
+  .CancelButton {
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+  }
+
+  .FechaPrecioBoton {
+    gap: 0.5em;
+  }
+
+  .event-card-search-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .infodate-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
   }
 }
