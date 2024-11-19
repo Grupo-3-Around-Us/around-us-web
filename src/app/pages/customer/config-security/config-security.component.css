@@ -15,9 +15,6 @@
   height: 100%;
 }
 
-.content {
-  background-color: #5AD8FB20;
-}
 
 .card {
   border-radius: 15px;
@@ -58,6 +55,11 @@
 ul {
   margin: 5px 0;
   padding-left: 20px;
+}
+
+.sec-container {
+  padding: 2em;
+  background-color: #5AD8FB20;
 }
 
 /* Media queries for responsiveness */

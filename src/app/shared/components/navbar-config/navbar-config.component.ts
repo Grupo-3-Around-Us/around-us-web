@@ -10,5 +10,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar-config.component.css'
 })
 export class NavbarConfigComponent {
+  isMenuActive: boolean = false;
 
+  toggleMenu(): void {
+    this.isMenuActive = !this.isMenuActive;
+  }
+
+  closeMenu(): void {
+    this.isMenuActive = false;
+  }
 }

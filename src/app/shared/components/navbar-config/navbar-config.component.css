@@ -1,3 +1,9 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
 a {
   text-decoration: none;
 }
@@ -76,27 +82,59 @@ a:visited {
   background-color: #95BCCB;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
+.navbar-micu-container.active {
+  left: 0; /* Desliza el menú hacia la vista */
+}
+
+.menu-toggle-btn {
+  display: none;
+}
+
+.menu-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (width <= 770px) {
+  .menu-toggle-btn {
+    display: block;
+  }
+
   .navbar-micu-container {
-    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
   }
 
-  .navbar-micu-user-card {
-    padding: 0.5em 1em;
+  .button-container {
+    background-color: #5AD8FB20;
+    padding: 1em 2em;
+    border-radius: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+
   }
 
-  .navbar-micu-info {
-    h6 {
-      font-size: 0.7em;
-    }
-
-    p {
-      font-size: 0.8em;
-    }
+  :host {
+    background-color: #fff;
   }
 
-  .navbar-buttons {
-    padding: 0.8em 1.5em;
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 999;
   }
 }
