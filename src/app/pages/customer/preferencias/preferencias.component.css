@@ -286,3 +286,41 @@ select > option {
 select:focus {
   outline: none;
 }
+
+@media (max-width: 768px) {
+  .event-pref-modal {
+    width: 90%;
+    padding: 1.5em 1em;
+  }
+
+  .preferencia-item {
+    padding: 0.5em 0.8em;
+    font-size: 0.8em;
+  }
+
+  .micu-preferences-right {
+    padding: 1.5em 2em;
+  }
+
+  .event-pref-seleccion-container {
+    gap: 0.5em;
+  }
+
+  .preferencias-container {
+    gap: 0.5em;
+  }
+
+  .notif-pref-model {
+    width: 90%;
+    padding: 1.5em 1em;
+
+    .txt-container {
+      h5 {
+        font-size: 1.4em;
+      }
+      p{
+        font-size: 1em;
+      }
+    }
+  }
+}

@@ -1,8 +1,25 @@
 :host {
   display: flex;
   flex-direction: row;
+  height: auto;
 }
 
 app-navbar-mi-cuenta {
+  align-self: stretch;
+}
+
+main {
   flex: 1;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  :host {
+    flex-direction: column;
+  }
+
+  app-navbar-mi-cuenta {
+    width: 100%;
+    height: auto;
+  }
 }

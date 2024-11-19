@@ -25,6 +25,8 @@ export class EventSearchComponent implements OnInit, OnDestroy {
   events: CustomEvent[] = [];
   filteredEvents: CustomEvent[] = [];
 
+  isFiltersActive: boolean = false;
+
   selectedCategory: string = 'Todos';
   selectedPrice: number = 0;
   minPrice: number = 0;
@@ -66,14 +68,14 @@ export class EventSearchComponent implements OnInit, OnDestroy {
         }
 
         else if (this.selectedPrice !== 0 ) {
-          const matchesSearch = event.name.toLowerCase().includes(query) && 
-          (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase()) 
+          const matchesSearch = event.name.toLowerCase().includes(query) &&
+          (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase())
           && event.price >= this.minPrice && event.price <= this.maxPrice;
           return matchesSearch;
         }
 
         else {
-          const matchesSearch = event.name.toLowerCase().includes(query) && 
+          const matchesSearch = event.name.toLowerCase().includes(query) &&
           (this.selectedCategory === "Todos" ? true : event.category.name.toLowerCase() === this.selectedCategory.toLowerCase());
           return matchesSearch;
         }
@@ -94,5 +96,15 @@ export class EventSearchComponent implements OnInit, OnDestroy {
 
   viewEventDetails(eventId: number): void {
     this.router.navigate([`/customer/events/${eventId}`]); // Ruta para detalles del evento
+  }
+
+  toggleFilters(): void {
+    this.isFiltersActive = !this.isFiltersActive;
+  }
+
+  closeFilters(): void {
+    if (this.isFiltersActive) {
+      this.isFiltersActive = false;
+    }
   }
 }

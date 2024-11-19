@@ -1,7 +1,10 @@
 <div class="event-search-container">
+  <button class="toggle-filters-btn" (click)="toggleFilters()">
+    ☰ Filtros
+  </button>
 
    <div class="container">
-      <div class="sidebar">
+      <div class="sidebar" [class.active]="isFiltersActive">
          <h2>Filtros de búsqueda</h2>
          <h3>Por categoría</h3>
          <div class="category-options">
@@ -30,4 +33,10 @@
          <app-event-card-search *ngFor="let event of filteredEvents" [event]="event" [routerLink]="['/customer/events', event.id]"></app-event-card-search>
       </div>
    </div>
+
+    <div
+      class="overlay"
+      *ngIf="isFiltersActive"
+      (click)="toggleFilters()"
+    ></div>
 </div>

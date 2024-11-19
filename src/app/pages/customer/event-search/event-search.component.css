@@ -207,3 +207,80 @@ body {
 app-event-card-search {
   cursor: pointer;
 }
+
+
+
+.toggle-filters-btn {
+  justify-self: flex-start;
+  display: none;
+  background-color: #0A8754;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 250px;
+  /* Otros estilos existentes */
+  /* Asegura que en pantallas grandes, la barra de filtros siempre esté visible */
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  /* Otros estilos existentes */
+}
+
+@media (max-width: 768px) {
+  .toggle-filters-btn {
+    display: block;
+  }
+
+  .container {
+    display: flex;
+    padding: 0px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%;
+    max-width: 300px;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  /* Superposición */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+  }
+
+  .filtered-events-content {
+    width: 100%;
+    overflow: auto;
+    padding: 5px;
+  }
+}
