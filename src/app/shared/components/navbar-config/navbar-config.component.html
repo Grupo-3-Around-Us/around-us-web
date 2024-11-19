@@ -1,4 +1,11 @@
-<div class="navbar-micu-container">
+<div class="button-container">
+  <button class="menu-toggle-btn" (click)="toggleMenu()" aria-label="Mostrar menú">
+    <i class="fa fa-bars"></i>
+  </button>
+</div>
+
+
+<div class="navbar-micu-container" [class.active]="isMenuActive">
   <H1>Configuracion</H1>
   <hr>
   <div class="navbar-micu-buttons">
@@ -13,3 +20,5 @@
   </div>
 </div>
 
+
+<div *ngIf="isMenuActive" class="overlay" (click)="closeMenu()"></div>

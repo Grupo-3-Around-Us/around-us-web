@@ -65,4 +65,12 @@
     width: 30px;
     height: 15px;
   }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  .form-check-label {
+    font-size: 0.8em;
+  }
 }
