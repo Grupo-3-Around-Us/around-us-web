@@ -1,0 +1,24 @@
+<div class="button-container">
+  <button class="menu-toggle-btn" (click)="toggleMenu()" aria-label="Mostrar menú">
+    <i class="fa fa-bars"></i>
+  </button>
+</div>
+
+
+<div class="navbar-micu-container" [class.active]="isMenuActive">
+  <H1>Configuracion</H1>
+  <hr>
+  <div class="navbar-micu-buttons">
+    <a class="navbar-micu-buttons-security navbar-buttons" routerLink="security" routerLinkActive="active-button">
+      <i class="fas fa-lock"></i>
+      <span>Seguridad</span>
+    </a>
+    <a class="navbar-micu-buttons-privacy navbar-buttons" routerLink="privacy" routerLinkActive="active-button">
+      <i class="fas fa-shield-alt"></i>
+      <span>Privacidad</span>
+    </a>
+  </div>
+</div>
+
+
+<div *ngIf="isMenuActive" class="overlay" (click)="closeMenu()"></div>

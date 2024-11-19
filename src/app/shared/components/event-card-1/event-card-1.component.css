@@ -1,0 +1,58 @@
+p {
+  margin: 0;
+}
+
+.event-card-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0.7em;
+  cursor: pointer;
+  flex: 1;
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+  border-radius: 1.3em;
+}
+
+.event-info {
+  flex: 1;
+  margin-top: 0.6em;
+  padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.event-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.event-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #141516;
+  margin: 0;
+}
+
+.event-date {
+  font-size: 0.9em;
+  color: #757575;
+  margin: 2px 0;
+}
+
+.event-free {
+  font-size: 1em;
+  color: #3E677C;
+  font-weight: bold;
+}
+
+.event-price {
+  font-size: 0.9em;
+  color: #3E677C;
+  font-weight: bold;
+}

@@ -1,0 +1,83 @@
+:host {
+  flex: 3;
+  height: 100vh;
+}
+
+.d-flex {
+  height: 100%;
+}
+
+.config-security-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+}
+
+.btn-custom {
+  background-color: #5bc0de;
+  color: white;
+  border-radius: 20px;
+}
+
+.btn-custom-green {
+  background-color: #5cb85c;
+  color: white;
+  border-radius: 20px;
+}
+
+.btn-custom-green:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+.text-success {
+  color: #5cb85c;
+}
+
+.text-danger {
+  color: #d9534f;
+}
+
+ul {
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.sec-container {
+  padding: 2em;
+  background-color: #5AD8FB20;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .config-security-component {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .btn-custom,
+  .btn-custom-green {
+    padding: 10px 20px;
+  }
+
+  .small {
+    font-size: 0.75rem;
+  }
+}

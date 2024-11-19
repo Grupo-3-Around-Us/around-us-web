@@ -1,7 +1,16 @@
+import { Event } from "./event.model";
+import { UserPreferences } from "./user-preference.model";
+
 export interface User {
-    id: number;
-    fistName: string;
-    lastName: string;
-    email: string;
-    password: string;
+  id: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  phone: string;
+  image: File | null;
+  imageURL: string | null;
+  userPreferences: UserPreferences;
+  registeredEvents: Event[];
 }

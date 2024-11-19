@@ -1,0 +1,24 @@
+<div class="event-card-search-container">
+  <div class="event-card-search-info">
+    <h3>{{event.name}}</h3>
+    <div class="FechaPrecioBoton">
+      <div class="infodate-container">
+        <div class="event-card-mod" *ngIf="event.programation.eventMode === 'Presencial'">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Presencial</p>
+        </div>
+        <div class="event-card-mod" *ngIf="event.programation.eventMode === 'Virtual'">
+          <i class="fa-solid fa-desktop"></i>
+          <p>Virtual</p>
+        </div>
+          <div class="event-card-date">{{event.programation.date | date: 'EEEE, MMMM d, y'}}</div>
+          <div class="event-card-price" *ngIf="event.price === 0">Gratis</div>
+          <div class="event-card-price" *ngIf="event.price > 0">${{event.price}}</div>
+        </div>
+      <button class="CancelButton" *ngIf="registered" (click)="unRegister()">Cancelar Registro</button>
+    </div>
+  </div>
+  <div class="event-card-search-image">
+    <img [src]="event.imageUrl">
+  </div>
+</div>

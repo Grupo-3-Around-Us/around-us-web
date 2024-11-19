@@ -1,1 +1,37 @@
-<p>navbar-customer works!</p>
+<header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/customer/home">
+      <span class="ms-2">AROUND US</span>
+      <img src="assets/aroundus-logo.png" alt="Logo" width="40" height="40">
+    </a>
+    <!-- Barra de búsqueda -->
+    <form class="d-flex mx-auto search-form" role="search">
+      <div class="search-container">
+        <input
+          class="form-control me-5 search-box"
+          type="search"
+          placeholder="Buscar eventos"
+          aria-label="Buscar"
+          [(ngModel)]="searchQuery"
+          (input)="onSearchQueryChange($event)"
+          name="search"
+          routerLink="events/search"
+        >
+        <i class="fa fa-search search-icon"></i>
+      </div>
+    </form>
+
+    <div class="icon-container d-flex align-items-center">
+      <div class="notification-icon">
+        <i class="fa-regular fa-bell fs-3"></i>
+      </div>
+      <i class="fa-solid fa-user-circle fs-2 profile-icon" (click)="toggleNotificationMenu()"></i>
+      <div *ngIf="showProfileOptions" class="profile-menu">
+        <a class="profile-option" routerLink="micuenta/informacion-personal" (click)="toggleNotificationMenu()">Mi Cuenta</a>
+        <a class="profile-option" (click)="openEventRegistradoModal()" (click)="toggleNotificationMenu()">Mis Registros</a>
+        <a class="profile-option" routerLink="config/security" (click)="toggleNotificationMenu()">Configuración</a>
+        <a routerLink="" class="profile-option">Cerrar Sesión</a>
+      </div>
+    </div>
+  </div>
+</header>

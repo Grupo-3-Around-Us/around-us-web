@@ -1,0 +1,238 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+/* Estilo para la mitad de la imagen */
+.image-section-login {
+  flex: 1;
+  position: relative;
+}
+
+.background-image-login {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilo para la mitad del formulario de inicio de sesión */
+.form-section-login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+
+
+/* Estilo para el logo y el texto al lado */
+.header-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.logo-text-login {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0A8754;
+}
+
+.logo-container-login {
+  align-self: flex-end;
+}
+
+/* Botón "Volver al inicio" */
+.return-button-login {
+  align-self: flex-start;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.return-button-login::before {
+  content: "←"; /* Añadir la flecha como un pseudo-elemento */
+  margin-right: 5px; /* Espaciado entre la flecha y el texto */
+}
+
+/* Estilos para el formulario */
+.login-form-section {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3em;
+
+  h2 {
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+.login-form-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.login-form-section label {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.login-form-section input {
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.login-form-section h2 {
+  margin-bottom: 5px; /* Reduce el margen inferior del título */
+  font-size: 40px;
+  color: #08B16B;
+}
+
+.login-form-section h3 {
+
+  font-size: 12px;
+  color: #666; /* Color más suave para diferenciarlo */
+}
+
+.form-group{
+  width: 100%;
+
+  mat-form-field {
+    border: none;
+    display: flex;
+  }
+}
+
+/* Estilo para el icono del ojo */
+.password-container-login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-password-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  flex-direction: row;
+}
+
+/* Estilo para el cuadro de selección */
+.checkbox-container-login {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.checkbox-container-login input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px; /* Espaciado entre el cuadrado y el texto */
+}
+
+/* Ajustar la posición de "Recordar Contraseña" */
+.login-form-section h4 {
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 15px; /* Ajuste de espaciado */
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para el texto '¿Aun no tienes una cuenta?' */
+.register-login {
+  text-align: center;
+  padding: 2%;
+  font-size: 14px;
+  color: #333;
+}
+
+.register-login a {
+  color: blue;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.register-login a:hover {
+  text-decoration: none;
+}
+
+/* Estilo para el botón de iniciar sesión */
+.login-form-section button {
+  width: auto;
+  padding: 8px 40px; /* Reduce el relleno */
+  font-size: 14px;
+  color: black;
+  background-color: #12D585;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form-section button:hover {
+  background-color: #555;
+}
+
+/* Estilo para el enlace de '¿Olvidaste tu contraseña?' */
+.forgot-password-login {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.forgot-password-login a {
+  color: blue;
+  text-decoration: none;
+}
+
+
+@media (width <= 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .image-section-login {
+    display: none;
+  }
+
+  .form-section-login {
+    padding: 20px;
+  }
+
+  .login-form-section {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,161 @@
+/*----------------------------------------------------------------Header----------------------------------------------------------------*/
+header {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*Logo y nombre (en una flexbox)*/
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px; /*distancia entre elemenots*/
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+}
+
+.container {
+  gap: 1em;
+}
+
+.navbar-brand span {
+  color: #0A8754;
+  font-weight: bold;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+}
+
+/*----------------------------------------------------------------Perfil----------------------------------------------------------------*/
+.profile-icon {
+  color: #375567;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mx-auto {
+  flex: 1;
+  justify-content: center;
+}
+
+/* Estilo para el ícono de notificaciones */
+.notification-icon {
+  position: relative;
+  color: #375567;
+  border-radius: 50%;
+}
+
+.container {
+  width: 100%;
+}
+
+/*Estilos para el menú desplegable de notificaciones */
+.profile-menu {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-option {
+  padding: 0.5em 1em;
+  color: #141516;
+  text-decoration: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.profile-option:hover {
+  background-color: #f0f0f0;
+}
+
+/*-----------------------------------------------------------Barra de Búsqueda-----------------------------------------------------------*/
+.search-box {
+  background-color: #C1D9E0;
+  border: none;
+  padding: 0.6em 1.3em;
+  border-radius: 0.9em; /*bordes redondeados*/
+  font-family: 'DM Sans';
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.search-box::placeholder {
+  font-weight: 700;
+  color: #141516;
+  font-family: 'DM Sans', sans-serif; /* Asegurarse de que la fuente del placeholder sea DM Sans */
+  opacity: 0.9;
+}
+
+/*contenedor para la barra de búsqueda*/
+.search-container {
+  position: relative;
+  width: 600px; /* Ajusta el ancho según sea necesario */
+}
+
+/*lupa icono*/
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #141516;
+  font-size: 1.2rem;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    gap: 10px;
+  }
+
+  .navbar-brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-brand span {
+    font-size: 1.2rem;
+  }
+
+
+  .search-container {
+    width: 100%;
+  }
+}
+
+@media  (max-width: 576px) {
+  .navbar-brand {
+    gap: 5px;
+  }
+
+  .navbar-brand img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-brand span {
+    display: none;
+  }
+
+  .form-control::placeholder{
+    font-size: 0.8em;
+    color: #0008;
+  }
+}

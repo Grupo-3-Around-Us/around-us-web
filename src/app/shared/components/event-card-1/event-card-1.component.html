@@ -1,0 +1,14 @@
+<div class="event-card-item">
+  <img [src]="event.imageUrl" alt="{{ event.name }}" class="event-image">
+
+  <div class="event-info">
+    <div class="event-data">
+      <p class="event-title">{{ event.name }}</p>
+      <p class="event-date">{{ event.programation.date }}</p>
+    </div>
+    <div class="event-price">
+      <p class="event-price" *ngIf="event.price > 0">Desde ${{ event.price }}</p>
+      <p class="event-free" *ngIf="event.price === 0">Gratis</p>
+    </div>
+  </div>
+</div>

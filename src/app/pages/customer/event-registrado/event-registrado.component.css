@@ -1,0 +1,51 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000020;
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modal-header{
+  background-color: white;
+  width: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 3em;
+  border-radius: 2em;
+  gap:2em;
+}
+.event-pref-return-button{
+  cursor: pointer;
+  align-self: flex-start;
+}
+.eventos-registrados{
+  overflow: auto;
+  display: flex;
+  gap: 1.5em;
+  flex-direction: column;
+  padding: 1em;
+}
+
+@media (max-width: 1025px) {
+  .eventos-registrados{
+    flex-direction: column;
+  }
+
+  .modal-header {
+    width: 90%;
+    padding: 1em 0.5em;
+    font-size: 1em;
+  }
+
+  .event-pref-return-button{
+    font-size: 1em;
+    padding: 0 1em;
+  }
+}

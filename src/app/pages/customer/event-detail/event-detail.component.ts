@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { EventService } from '../../../core/services/event.service';
+import { Event } from '../../../shared/models/event.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-event-detail',
-  standalone: true,
-  imports: [],
+  standalone:true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './event-detail.component.html',
-  styleUrl: './event-detail.component.css'
+  styleUrls: ['./event-detail.component.css']
 })
-export class EventDetailComponent {
+export class EventDetailComponent implements OnInit {
+  event: Event | undefined;
 
+  constructor(private route: ActivatedRoute, private eventService: EventService) {}
+
+  ngOnInit(): void {
+    const eventId = Number(this.route.snapshot.paramMap.get('id'));
+    const foundEvent = this.eventService.getEventById(eventId);
+    this.event = foundEvent !== null ? foundEvent : undefined;
+  }
 }

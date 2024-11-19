@@ -1,12 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also i files */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 app-root {
   display: block;
   height: 100vh;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

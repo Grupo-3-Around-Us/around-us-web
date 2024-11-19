@@ -1,5 +1,3 @@
 export interface Category {
-    id: number;
-    name: string;
-    description: string;
+  name: "IA Event" | "Programming Event" | "Networking Event" | "Hackathon";
 }

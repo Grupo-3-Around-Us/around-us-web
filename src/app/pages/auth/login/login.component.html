@@ -1,1 +1,69 @@
-<p>login works!</p>
+<div class="login-container">
+  <!-- Sección de la imagen -->
+  <div class="image-section-login">
+    <img
+      src="assets/auth-imgs/login-img.png"
+      alt="Imagen grande"
+      class="background-image-login"
+    />
+  </div>
+
+  <!-- Sección del formulario de inicio de sesión -->
+  <div class="form-section-login">
+    <div class="header-container">
+      <div class="logo-container-login">
+        <span class="logo-text-login">AROUND US</span>
+        <img src="assets/aroundus-logo.png" alt="Logo" class="logo-login" />
+      </div>
+
+      <button class="return-button-login" routerLink="">
+        Volver al inicio
+      </button>
+    </div>
+    <!-- Formulario de inicio de sesión -->
+    <div class="login-form-section">
+      <h2>Iniciar Sesión</h2>
+      <h3>¡Que bueno verte por aquí de nuevo!</h3>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <!-- Campo de correo electrónico -->
+        <label for="email-login">Correo electrónico:</label>
+        <input
+          matInput
+          formControlName="email"
+          id="email-login"
+          required
+          placeholder="Introduce tu email"
+        />
+
+        <!-- Campo de contraseña con icono de ojo -->
+
+        <label for="password-login">Contraseña</label>
+        <input
+          formControlName="password"
+          type="password"
+          id="password-login"
+          required
+          placeholder="Introduce tu contraseña"
+        />
+
+        <div class="checkbox-container-login">
+          <input type="checkbox" id="remember-login" />
+          <h4 for="remember-login">Recordar Contraseña</h4>
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <!-- Aquí agregamos el cuadrado y el texto "Recordar Contraseña" -->
+
+      <!-- Texto "¿Aún no tienes una cuenta? Regístrate" -->
+      <div class="register-login">
+        ¿Aún no tienes una cuenta? <a routerLink="../register">Regístrate</a>
+      </div>
+
+      <!-- Enlace "¿Olvidaste tu contraseña?" -->
+      <div class="forgot-password-login">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </div>
+    </div>
+  </div>
+</div>

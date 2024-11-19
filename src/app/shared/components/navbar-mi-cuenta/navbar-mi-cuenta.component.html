@@ -1,0 +1,30 @@
+<div class="button-container">
+  <button class="menu-toggle-btn" (click)="toggleMenu()" aria-label="Mostrar menú">
+    <i class="fa fa-bars"></i>
+  </button>
+</div>
+
+
+<div class="navbar-micu-container" [class.active]="isMenuActive">
+  <div *ngIf="user" class="navbar-micu-user-card">
+    <img *ngIf="user.imageURL" [src]="user.imageURL" />
+    <div class="navbar-micu-info">
+      <h6>{{ user.firstName }} {{ user.lastName }}</h6>
+      <p>&#64;{{ user.username }}</p>
+    </div>
+  </div>
+  <hr />
+
+  <div class="navbar-micu-buttons">
+    <a class="navbar-micu-buttons-infoper navbar-buttons" routerLink="informacion-personal" routerLinkActive="active-button" (click)="closeMenu()">
+      <i class="fa-regular fa-user"></i>
+      <span>Información Personal</span>
+    </a>
+    <a class="navbar-micu-buttons-pref navbar-buttons" routerLink="preferencias" routerLinkActive="active-button" (click)="closeMenu()">
+      <i class="fa-solid fa-sliders"></i>
+      <span>Preferencias</span>
+    </a>
+  </div>
+</div>
+
+<div *ngIf="isMenuActive" class="overlay" (click)="closeMenu()"></div>

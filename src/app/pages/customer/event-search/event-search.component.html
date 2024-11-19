@@ -1,1 +1,42 @@
-<p>event-search works!</p>
+<div class="event-search-container">
+  <button class="toggle-filters-btn" (click)="toggleFilters()">
+    ☰ Filtros
+  </button>
+
+   <div class="container">
+      <div class="sidebar" [class.active]="isFiltersActive">
+         <h2>Filtros de búsqueda</h2>
+         <h3>Por categoría</h3>
+         <div class="category-options">
+            <label *ngFor="let category of categories" >
+              <input type="radio" name="category" [(ngModel)]="selectedCategory" [value]="category"  (ngModelChange)="filterEvents()" />
+              <span class="circle"></span>
+              {{ category }}
+            </label>
+          </div>
+
+
+         <h3>Por precio</h3>
+         <label>
+            <input type="radio" name="price" [(ngModel)]="selectedPrice" [value]="0" (ngModelChange)="filterEvents()" />
+            Gratis
+         </label>
+         <label>
+            <input type="radio" name="price" [(ngModel)]="selectedPrice" [value]="1" (ngModelChange)="filterEvents()"/>
+            Precio: S/
+            <input type="number" [(ngModel)]="minPrice" value="0" (ngModelChange)="filterEvents()"/> - S/
+            <input type="number" [(ngModel)]="maxPrice" value="120" (ngModelChange)="filterEvents()"/>
+         </label>
+      </div>
+
+      <div class="filtered-events-content" >
+         <app-event-card-search *ngFor="let event of filteredEvents" [event]="event" [routerLink]="['/customer/events', event.id]"></app-event-card-search>
+      </div>
+   </div>
+
+    <div
+      class="overlay"
+      *ngIf="isFiltersActive"
+      (click)="toggleFilters()"
+    ></div>
+</div>

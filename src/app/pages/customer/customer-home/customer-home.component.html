@@ -1,0 +1,46 @@
+<div class="layout-container">
+  <div class="content-container">
+    <div class="banner">
+      <img
+        src="assets/customer-home/evento-principal.png"
+        alt="Banner de Evento"
+        class="banner-image"
+      />
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="home-container">
+      <!-- Nueva sección de eventos -->
+      <div class="event-section">
+        <h2>Eventos que pueden ser de tu interés</h2>
+
+        <!-- Primera fila de eventos -->
+        <div class="event-row">
+          <app-event-card-1
+            *ngFor="let event of events.slice(0, 4)"
+            [event]="event"
+            [routerLink]="['/customer/events', event.id]"
+          ></app-event-card-1>
+        </div>
+      </div>
+
+        <!-- Segunda fila de eventos -->
+        <div class="discover-section">
+          <h2>Descubre</h2>
+          <div class="event-row">
+            <app-event-card-1
+            *ngFor="let event of events.slice(4, 8)"
+            [event]="event"
+            [routerLink]="['/customer/events', event.id]"
+          ></app-event-card-1>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="ventana-model">
+  <app-event-registrado>
+  </app-event-registrado>
+  <div class="content-container">
+  </div>
+</div>

@@ -1,0 +1,193 @@
+:host {
+  display: block;
+  height: 100vh;
+  flex: 3;
+}
+
+.info-personal-container {
+  display: block;
+  height: 100%;
+}
+
+.micu_infoper_right {
+  padding: 1.5em 1em;
+  gap: 0.5em;
+  background-color: #5AD8FB20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  h1 {
+    font-size: 3em;
+    font-weight: 100;
+  }
+
+  hr {
+    margin: 0;
+    width: 90%;
+    border: 0.2px solid #0002;
+  }
+}
+
+.navbar-micu-buttons-infoper {
+  background-color: #95BCCB;
+}
+
+.micu-infoper-actu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1em 4em;
+  gap: 2em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7em;
+  width: 100%;
+  flex: 1;
+
+  label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 100;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+  }
+
+  input {
+    padding: 0.7em 1.2em;
+    border: none;
+    border-radius: 1.1em;
+    width: 100%;
+    font-size: 1em;
+    background-color: #E4EAF5;
+  }
+}
+
+
+.input-img-btn-cntainer > input {
+  appearance: none;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+.micu-infoper-actu-img > label > img{
+  border-radius: 50%;
+}
+
+.micu-infoper-actu-img > label > img:hover{
+  cursor: pointer;
+}
+
+
+form > button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 1em;
+  background-color: #0A8754;
+  color: white;
+  font-size: 1em;
+  font-weight: 100;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+
+.micu-infoper-actu-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+
+  img {
+    width: 411px;
+    max-width: 411px;
+    height: 411px;
+    max-height: 411px;
+    background-position: center;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: 100;
+  }
+}
+
+
+.input-img-btn-cntainer {
+  display: flex;
+  position:relative;
+  gap: 1em;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  top:-20%;
+  left: -8%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
+  i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .micu-infoper-actu {
+    flex-direction: column;
+    padding: 1em 2em;
+    height: 100%;
+  }
+
+  form {
+    padding: 0 2em;
+  }
+
+  :host {
+    height: auto;
+  }
+
+  .info-personal-container {
+    flex-wrap: wrap-reverse;
+    height: auto;
+  }
+
+  .micu-infoper-actu-img {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media (width <= 426px) {
+  .micu_infoper_right {
+    h1 {
+      font-size: 1.7em;
+    }
+  }
+
+  .micu-infoper-actu-img {
+    padding: 1em;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  form {
+    padding: 0;
+  }
+
+}
